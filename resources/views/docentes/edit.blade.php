@@ -143,13 +143,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    {!! Form::label('detallet', 'Curriculum: ') !!}
-                    {!! Form::textarea('detallet', null, [
-                        'class' => 'form-control' . ($errors->has('observacion') ? ' is-invalid' : ''),
+                    {!! Form::label('descripcionT', 'Curriculum: ') !!}
+                    {!! Form::textarea('descripcionT', null, [
+                        'class' => 'form-control' . ($errors->has('descripcionT') ? ' is-invalid' : ''),
                         'placeholder' => 'Escriba el curriculum del docente...',
                         'rows' => 4,
                     ]) !!}
-                    @error('observacion')
+                    @error('DescripcionT')
                         <span class="invalid-feedback">
                             <strong>{{ $message }}</strong>
                         </span>

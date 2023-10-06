@@ -29,24 +29,29 @@ class DocenteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'carnet' => 'required|integer|unique:clientes',
+            'ci'=> 'required',
             'nombre' => 'required',
             'materno' => 'required',
             'paterno' => 'required',
             'edad' => 'required',
             'sexo' => 'required',
             'descripcionT' => 'required',
+            'pais'=>'required',
+            'email'=>'required',
+
    
         ]);
 
         Docente::create([
-            'carnet' => $request->carnet,
+            'ci'=> $request->ci,
             'nombre' => $request->nombre,
             'materno' => $request->materno,
             'paterno' => $request->paterno,
             'edad' => $request->edad,
             'sexo' => $request->sexo,
             'descripcionT' => $request->descripcionT,
+            'pais'=>$request->pais,
+            'email'=>$request->email,
         ]);
 
         $bitacora = new Bitacora();
@@ -57,13 +62,14 @@ class DocenteController extends Controller
         $bitacora->save();
         // Código adicional o redireccionamiento después de guardar el cliente
 
-        return redirect()->route('cliente.index')->with('info', 'Docente creado exitosamente.');
+        return redirect()->route('docentes.index')->with('info', 'Docente creado exitosamente.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Docente $cliente)
+    public function show(Docente $docente)
+
     {
         //
     }
@@ -82,21 +88,29 @@ class DocenteController extends Controller
     public function update(Request $request, Docente $docente)
     {
         $request->validate([
-            'carnet' => 'required|integer|unique:clientes,carnet,' . $docente->id,
+            'ci'=> 'required',
             'nombre' => 'required',
             'materno' => 'required',
             'paterno' => 'required',
-            'ciudad' => 'required',
+            'edad' => 'required',
             'sexo' => 'required',
+            'descripcionT' => 'required',
+            'pais'=>'required',
+            'email'=>'required',
+
+   
         ]);
 
-        $docente->update([
-            'carnet' => $request->carnet,
+         $docente->update([
+            'ci'=> $request->ci,
             'nombre' => $request->nombre,
             'materno' => $request->materno,
             'paterno' => $request->paterno,
-            'ciudad' => $request->ciudad,
+            'edad' => $request->edad,
             'sexo' => $request->sexo,
+            'descripcionT' => $request->descripcionT,
+            'pais'=>$request->pais,
+            'email'=>$request->email,
         ]);
 
         $bitacora = new Bitacora();
@@ -108,7 +122,7 @@ class DocenteController extends Controller
 
         // Código adicional o redireccionamiento después de actualizar el cliente
 
-        return redirect()->route('docente.index')->with('info', 'Docente actualizado exitosamente.');
+        return redirect()->route('docentes.index')->with('info', 'Docente actualizado exitosamente.');
     }
 
     /**
@@ -125,7 +139,7 @@ class DocenteController extends Controller
         $bitacora->user_id = auth()->id();
         $bitacora->save();
 
-        return redirect()->route('cliente.index')->with('info', 'El docente se eliminó con éxito!');
+        return redirect()->route('docentes.index')->with('info', 'El docente se eliminó con éxito!');
     }
 
 

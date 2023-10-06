@@ -11,7 +11,7 @@ class AdminUsers extends Component
     use WithPagination;
     public $buscar;
     protected $paginationTheme = "bootstrap";
-    
+     
 
     public function render()
     {  

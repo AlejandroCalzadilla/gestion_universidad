@@ -382,6 +382,7 @@ return [
 
             ],
         ],
+        /*
         [
             'text'    => 'Administrar ventas',
             'icon'    => 'fas fa-fw fa-chart-line',
@@ -394,18 +395,7 @@ return [
                     'route'  => 'nota_venta.index',
                     'active' => ['nota_venta*'], //extra para los botones sidevar relacionados
                 ],
-                /*  [
-                    'text' => 'Plan de pago',
-                    'icon'    => 'fas fa-fw fa-coins',
-                    'route'  => 'plan-pago.index',
-                    'active' => ['pago*'], //extra para los botones sidevar relacionados
-                ],*/
-                /* [
-                    'text' => 'Cuota',
-                    'icon'    => 'fas fa-fw fa-coins',
-                    'route'  => 'cuota.index',
-                    'active' => ['cuota*'], //extra para los botones sidevar relacionados
-                ],*/
+              
 
                 [
                     'text' => 'Clientes',
@@ -423,7 +413,8 @@ return [
                 ],
 
             ],
-        ],
+        ], */
+         
         [
             'text'    => 'Administrar compras',
             'icon'    => 'fas fa-fw fa-tags',

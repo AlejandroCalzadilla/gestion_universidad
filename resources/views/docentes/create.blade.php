@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Nuevo PARABRISA</h1>
+    <h1>Nuevo Docente</h1>
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
                     {!! Form::label('ci', 'CI: ') !!}
                     {!! Form::text('ci', null, [
                         'class' => 'form-control' . ($errors->has('ci') ? ' is-invalid' : ''),
-                        'placeholder' => 'Escriba la medida del medio...',
+                        'placeholder' => 'Escriba el carnet de identidad...',
                     ]) !!}
                     @error('ci')
                         <span class="invalid-feedback">
@@ -55,8 +55,8 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('materno', 'Materno: ') !!}
-                    {!! Form::text('costado', null, [
+                    {!! Form::label('materno', 'Apellido Materno: ') !!}
+                    {!! Form::text('materno', null, [
                         'class' => 'form-control' . ($errors->has('materno') ? ' is-invalid' : ''),
                         'placeholder' => 'Escriba el apellido materno del docente...',
                     ]) !!}
@@ -134,12 +134,12 @@
 
 
                 <div class="form-group">
-                    {!! Form::label('edad', 'Edad: ') !!}
-                    {!! Form::text('edad', null ,  [
-                        'class' => 'form-control' . ($errors->has('edad') ? ' is-invalid' : ''),
+                    {!! Form::label('email', 'Email: ') !!}
+                    {!! Form::email('email', null ,  [
+                        'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
                         'placeholder' => 'escriba la edad del docente...',
                     ]) !!}
-                    @error('edad')
+                    @error('email')
                         <span class="invalid-feedback">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -163,8 +163,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    {!! Form::label('descripciont', 'CURRICULUON: ') !!}
-                    {!! Form::textarea('descripciont', null, [
+                    {!! Form::label('descripcionT', 'CURRICULUON: ') !!}
+                    {!! Form::textarea('descripcionT', null, [
                         'class' => 'form-control' . ($errors->has('descripciont') ? ' is-invalid' : ''),
                         'placeholder' => 'detalle el curriculuom del docente..',
                         'rows' => 4,
