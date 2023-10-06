@@ -340,6 +340,7 @@ return [
             'text'    => 'Administrar usuarios',
             'icon'    => 'fas fa-fw fa-users',
             'can' => 'Administrar usuarios',
+            
             'submenu' => [
                 [
                     'text' => 'Usuarios',
@@ -370,12 +371,22 @@ return [
                     'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar bitacora',
                 ],
+                [
+                    'text' => 'Docente',
+                    'route'  => 'docentes.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+
+
             ],
         ],
         [
             'text'    => 'Administrar ventas',
             'icon'    => 'fas fa-fw fa-chart-line',
             'can' => 'Administrar ventas',
+            
             'submenu' => [
                 [
                     'text' => 'Nota de venta',

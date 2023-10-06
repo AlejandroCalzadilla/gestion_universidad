@@ -19,7 +19,7 @@ use App\Http\Controllers\TelefonoController;
 use App\Http\Controllers\NotaVentaController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\BitacoraController;
-
+use App\Http\Controllers\DocenteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +47,10 @@ Route::middleware([
 
 //Para los roles
 Route::resource('roles', RoleController::class)->names('admin.roles');
+Route::resource('docentes',DocenteController::class);
+
+
+
 
 //Para los usuarios
 //only en este caso solo creara las rutas index, edit, update
