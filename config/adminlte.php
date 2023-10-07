@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Vidcla</b>SRL',
+    'logo' => '<b>Uni</b>Generic',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -311,12 +311,12 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+        /*[
             'text' => 'DASHBOARD',
             'route'  => 'dashboard',
             'icon' => 'fas fa-fw fa-tachometer-alt',
             'can' => 'Ver dashboard',
-        ],
+        ],*/
         /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
@@ -337,7 +337,7 @@ return [
         ],*/
         ['header' => 'ADMINISTRACION'],
         [
-            'text'    => 'Administrar usuarios',
+            'text'    => 'Administrar Academica',
             'icon'    => 'fas fa-fw fa-users',
             'can' => 'Administrar usuarios',
             
@@ -371,8 +371,55 @@ return [
                     'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar bitacora',
                 ],
+               
                 [
-                    'text' => 'Docente',
+                    'text' => 'Carrera',
+                    'route'  => 'carreras.index',
+                    'icon'    => 'fas fa-fw fa-home',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+
+
+            ],
+        ],
+
+        [
+            'text'    => 'Gestion Academica',
+            'icon'    => 'fas fa-fw fa-users',
+            'can' => 'Administrar usuarios',
+             'active'=>true,
+            'submenu' => [
+                [
+                    'text' => 'Admin-Docente',
+                    'route'  => 'docentes.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'Admin-Estudiante',
+                    'route'  => 'docentes.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'Admin-Materias',
+                    'route'  => 'docentes.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'NotasD',
+                    'route'  => 'docentes.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'NotasE',
                     'route'  => 'docentes.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
@@ -381,7 +428,9 @@ return [
 
 
             ],
+
         ],
+    
         /*
         [
             'text'    => 'Administrar ventas',
@@ -415,7 +464,7 @@ return [
             ],
         ], */
          
-        [
+        /*[
             'text'    => 'Administrar compras',
             'icon'    => 'fas fa-fw fa-tags',
             'can' => 'Administrar compras',
@@ -445,7 +494,7 @@ return [
 
 
             ],
-        ],
+        ],*/
         [
             'text'    => 'Administrar Inventario',
             'icon'    => 'fas fa-fw fa-warehouse',

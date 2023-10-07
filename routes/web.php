@@ -20,6 +20,7 @@ use App\Http\Controllers\NotaVentaController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\CarrreraController;
 use App\Http\Controllers\EstudianteteController;
 
 /*
@@ -50,6 +51,7 @@ Route::middleware([
 //Para los roles
 Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('docentes',DocenteController::class);
+Route::resource('carreras',CarrreraController::class);
 
 
 

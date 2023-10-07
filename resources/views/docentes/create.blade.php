@@ -88,9 +88,9 @@
             <div class="col-md-6">
                 <div class="form-group">
                     {!! Form::label('sexo', 'Sexo: ') !!}
-                    {!! Form::text('sexo', null ,  [
+                    {!! Form::select('sexo', ['M' => 'Masculino', 'F' => 'Femenino'], null, [
                         'class' => 'form-control' . ($errors->has('sexo') ? ' is-invalid' : ''),
-                        'placeholder' => 'escriba el sexo del docente...',
+                        'placeholder' => 'Seleccione el sexo...',
                     ]) !!}
                     @error('sexo')
                         <span class="invalid-feedback">
