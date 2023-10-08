@@ -378,6 +378,13 @@ return [
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Listar bitacora',
                 ],
+                [
+                    'text' => 'Estudiante',
+                    'route'  => 'estudiante.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
 
 
             ],

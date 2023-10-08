@@ -16,12 +16,13 @@ return new class extends Migration
             $table->string('codigo');
             $table->string('ci');
             $table->string('nombre');
-            $table->string('materno');
-            $table->string('paterno');
             $table->string('sexo');
-            $table->string('edad');
-            $table->string('descripcion');
-         
+            $table->string('telefono');
+            $table->string('fecha_nacimiento');
+            $table->string('pais');
+            $table->string('modalidad_ingreso');
+            $table->string('periodo');
+            $table->string('titulo_bachiller');
             $table->string('email');
             $table->timestamps();
         });
