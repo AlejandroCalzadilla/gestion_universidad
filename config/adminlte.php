@@ -342,6 +342,7 @@ return [
             'can' => 'Administrar usuarios',
             
             'submenu' => [
+                 /*
                 [
                     'text' => 'Usuarios',
                     'route'  => 'admin.users.index',
@@ -371,7 +372,7 @@ return [
                     'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar bitacora',
                 ],
-               
+                */
                 [
                     'text' => 'Carrera',
                     'route'  => 'carreras.index',
@@ -406,7 +407,7 @@ return [
                 ],
                 [
                     'text' => 'Admin-Materias',
-                    'route'  => 'docentes.index',
+                    'route'  => 'materias.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Listar bitacora',

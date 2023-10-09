@@ -66,7 +66,8 @@ class CarrreraController extends Controller
     */
    public function edit(Carrera $carrera)
    {
-       return view('carreras.edit', compact('carrera'));
+    
+    return view('carreras.edit', compact('carrera'));
    }
 
    /**

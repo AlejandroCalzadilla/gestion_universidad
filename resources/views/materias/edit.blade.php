@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar Carrera</h1>
+    <h1>Editar materia</h1>
 @stop
 
 @section('content')
-@livewire('carrera-edit', ['carrera' => $carrera])
+
 @stop
 
 @section('css')

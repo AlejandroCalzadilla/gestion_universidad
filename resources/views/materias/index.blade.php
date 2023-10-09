@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Materias')
 
 @section('content_header')
-    <h1>Editar Carrera</h1>
+    <h1>Lista de Materias</h1>
 @stop
 
-@section('content')
-@livewire('carrera-edit', ['carrera' => $carrera])
+@section('content')    
+    @livewire('materia-index')
 @stop
 
 @section('css')

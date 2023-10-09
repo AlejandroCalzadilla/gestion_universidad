@@ -27,14 +27,14 @@ class MateriaController extends Controller
     public function store(Request $request)
     {
         $request->validate([          
+            'sigla' => 'required',
             'nombre' => 'required',
-            'semestre' => 'required',
         ]);
  
         Materia::create([
           
+            'sigla' => $request->sigla,
             'nombre' => $request->nombre,
-            'semestre' => $request->semestre,
            
         ]);
  
@@ -81,7 +81,7 @@ class MateriaController extends Controller
          $materia->update([
          
             'sigla' => $request->nombre,
-            'nombre' => $request->semestre,
+            'nombre' => $request->nombre,
             
         ]);
  

@@ -22,6 +22,7 @@ use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\CarrreraController;
 use App\Http\Controllers\EstudianteteController;
+use App\Http\Controllers\MateriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::middleware([
 Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('docentes',DocenteController::class);
 Route::resource('carreras',CarrreraController::class);
+Route::resource('materias',MateriaController::class);
+
 
 
 
