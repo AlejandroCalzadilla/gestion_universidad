@@ -59,6 +59,7 @@ class CarrreraController extends Controller
 
    {
        //
+       return view('carreras.show', compact('carrera'));
    }
 
    /**

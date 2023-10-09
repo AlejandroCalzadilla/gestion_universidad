@@ -56,13 +56,19 @@
 
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
-                               
+                                @can('Editar almacen')
+                                    <td width="10px">
+                                        <a class="btn btn-info"" href="{{ route('carreras.show', $carrera) }}"><i
+                                                class="fas fa-user-edit"></i></a>
+                                    </td>
+                                @endcan
                                 @can('Editar almacen')
                                     <td width="10px">
                                         <a class="btn btn-primary" href="{{ route('carreras.edit', $carrera) }}"><i
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
+
 
                                 @can('Eliminar almacen')
                                     <td width="10px">

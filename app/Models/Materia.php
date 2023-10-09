@@ -17,8 +17,8 @@ class Materia extends Model
 
     public function carreras()
     {
-        return $this->belongsToMany(Carrera::class, 'carrera_materia')
-                    ->withPivot('semestre','credito');
+       return $this->belongsToMany(Carrera::class, 'carrera_materias', 'carrera_id', 'materia_id')
+                    ->withPivot('id','semestre', 'credito');  
     }
 
 

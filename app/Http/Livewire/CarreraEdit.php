@@ -13,11 +13,27 @@ class CarreraEdit extends Component
     public $semestre;
     public $credito;
     public $materias; 
+
+    //es como un constructor
     public function mount(Carrera $carrera)
     {
         $this->carrera = $carrera;
         $this->materias = Materia::all();
     }
+
+
+
+    //saca las que no estan registradas en la carrera
+    public function getMateriasDisponibles()
+    {
+        // Obtiene todas las materias disponibles para la carrera actual
+        $materias = Materia::whereNotIn('id', $this->carrera->materias->pluck('id'))->get() ;
+    
+        return $materias;
+    }
+
+
+
 
     public function agregarMateria()
     {
@@ -35,13 +51,28 @@ class CarreraEdit extends Component
             'semestre' => $this->semestre,
             'credito' => $this->credito,
         ]);
-
+       
+        
         // Limpiar los campos del formulario
         $this->reset(['materia_id', 'semestre', 'credito']);
     }
+
+
+    public function eliminarMateria($carreraMateriaId)
+    {
+        // Encuentra y elimina la relación carrera-materia por su ID
+        CarreraMateria::findOrFail($carreraMateriaId)->delete();
+       // return view('carreras.index');
+    }
+
 
     public function render()
     {
         return view('livewire.carrera-edit');
     }
+
+    public function limpiar_page(){
+        $this->resetPage();
+    }
+  
 }
