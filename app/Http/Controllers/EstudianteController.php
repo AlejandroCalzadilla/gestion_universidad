@@ -31,7 +31,7 @@ class EstudianteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+            
             'codigo' => 'required',
             'ci' => 'required',
             'nombre' => 'required',
@@ -46,7 +46,6 @@ class EstudianteController extends Controller
         ]);
 
         Estudiante::create([
-            'id'=> $request->id,
             'codigo' =>$request->codigo ,
             'ci' => $request->ci,
             'nombre' => $request->nombre,
@@ -62,7 +61,7 @@ class EstudianteController extends Controller
         ]);
 
         $bitacora = new Bitacora();
-        $bitacora->accion = '+++CREAR Docente';
+        $bitacora->accion = '+++CREAR Estudiante';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
@@ -75,7 +74,7 @@ class EstudianteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Docente $docente)
+    public function show(Estudiante $estudiante)
 
     {
         //
@@ -84,15 +83,15 @@ class EstudianteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Docente $docente)
+    public function edit(Estudiante $estudiante)
     {
-        return view('docentes.edit', compact('docente'));
+        return view('estudiantes.edit', compact('estudiante'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Docente $docente)
+    public function update(Request $request,Estudiante $estudiante)
     {
         $request->validate([
             'ci'=> 'required',
@@ -108,7 +107,7 @@ class EstudianteController extends Controller
    
         ]);
 
-         $docente->update([
+         $estudiante->update([
             'ci'=> $request->ci,
             'nombre' => $request->nombre,
             'materno' => $request->materno,
@@ -121,7 +120,7 @@ class EstudianteController extends Controller
         ]);
 
         $bitacora = new Bitacora();
-        $bitacora->accion = '***ACTUALIZAR CLIENTE';
+        $bitacora->accion = '***ACTUALIZAR Estudiante';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
@@ -129,24 +128,24 @@ class EstudianteController extends Controller
 
         // Código adicional o redireccionamiento después de actualizar el cliente
 
-        return redirect()->route('docentes.index')->with('info', 'Docente actualizado exitosamente.');
+        return redirect()->route('estudiantes.index')->with('info', 'Estudiante  actualizado exitosamente.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Docente $docente)
+    public function destroy(Estudiante $estudiante)
     {
-        $docente->delete();
+        $estudiante->delete();
 
         $bitacora = new Bitacora();
-        $bitacora->accion = 'XXX ELIMINAR CLIENTE';
+        $bitacora->accion = 'XXX ELIMINAR Estudiante';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
         $bitacora->save();
 
-        return redirect()->route('docentes.index')->with('info', 'El docente se eliminó con éxito!');
+        return redirect()->route('estudiantes.index')->with('info', 'El estudiante se eliminó con éxito!');
     }
    
 
