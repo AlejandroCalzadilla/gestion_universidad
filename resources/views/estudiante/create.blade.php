@@ -104,17 +104,18 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    {!! Form::label('sexo', 'Sexo: ') !!}
-                    {!! Form::text('sexo', null ,  [
-                        'class' => 'form-control' . ($errors->has('sexo') ? ' is-invalid' : ''),
-                        'placeholder' => 'escriba el sexo del estudiante...',
-                    ]) !!}
-                    @error('sexo')
-                        <span class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+    {!! Form::label('sexo', 'Sexo: ') !!}
+    {!! Form::select('sexo', ['Masculino' => 'Masculino', 'Femenino' => 'Femenino'], null, [
+        'class' => 'form-control' . ($errors->has('sexo') ? ' is-invalid' : ''),
+        'placeholder' => 'Seleccione el sexo del estudiante...',
+    ]) !!}
+    @error('sexo')
+        <span class="invalid-feedback">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</div>
+
                 <div class="form-group">
                     {!! Form::label('telefono', 'Telefono: ') !!}
                     {!! Form::number('telefono', null ,  [
@@ -174,7 +175,7 @@
 
             <div class="form-group">
                 {!! Form::label('fecha_nacimiento', 'Fecha de nacimiento: ') !!}
-                {!! Form::text('fecha_nacimiento', null ,  [
+                {!! Form::date('fecha_nacimiento', null ,  [
                     'class' => 'form-control' . ($errors->has('fecha_nacimiento') ? ' is-invalid' : ''),
                     'placeholder' => 'escriba la fecha de nacimiento del estudiante...',
                 ]) !!}
