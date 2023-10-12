@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>BIENVENIDO!!!</h1>
 @stop
 
 @section('content')
-    @if (Auth::user()->roles->count() > 0)
+    {{-- @if (Auth::user()->roles->count() > 0)
         <p>Roles asignados para {{Auth::user()->name}} :</p>
         <ul>
             @foreach (Auth::user()->roles as $role)
@@ -16,7 +16,7 @@
         </ul>
     @else
         <p>No se han asignado roles al usuario.</p>
-    @endif
+    @endif --}}
 @stop
 
 @section('css')

@@ -1,17 +1,17 @@
 <x-app-layout>
 
 
-    <section class="bg-cover" style="background-image: url({{ asset('img/home/pexels-clem-onojeghuo-175683.jpg') }})">
+    <section class="bg-cover" style="background-image: url({{ asset('img/home/uagrm.jpeg') }})">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
 
             <div class="w-full md:w-3/4 lg:w-1/2">
                 <h1 class="text-white font-bold text-4xl">
-                    Parabrisas VIDCLA
+                   VEN A INCRIBIRTE!!!
                 </h1>
-                <p class="text-white text-lg mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
-                    numquam placeat et perspiciatis ipsum,
-                    libero molestias ad, quia illo incidunt alias nihil temporibus. Laudantium, fugiat ea sapiente quis
-                    blanditiis doloribus.</p>
+                <p class="text-white text-lg mt-2">"El ingreso a la
+                     universidad marca el inicio de una travesía 
+                     hacia el conocimiento, la autodescubrimiento y
+                      la creación de un futuro brillante."</p>
             </div>
 
         </div>
@@ -19,7 +19,7 @@
 
     <section class="mt-24">
         <h1 class="text-gray-500 text-center text-3xl mb-6">
-            Lorem ipsum dolor sit amet.
+            VISITANOS
         </h1>
 
         <div
@@ -27,57 +27,53 @@
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/car-gaa7ebd4e1_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img2.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                       Computacion
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/audi-a3-gb143c57e8_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img3.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                       Laboratorio
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/automobile-gf9c29d6a1_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img4.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                        Facultad
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/chevy-impala-ga2c01d4f5_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img1.png') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                        Modulo
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
         </div>
@@ -86,57 +82,53 @@
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/car-gaa7ebd4e1_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img5.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                        Entretenimiento
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/audi-a3-gb143c57e8_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img6.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                        Deporte
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/automobile-gf9c29d6a1_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img7.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                       Comedor
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
             <article>
                 <figure>
                     <img class="rounded-xl h-36 w-full object-cover"
-                        src="{{ asset('img/home/content/chevy-impala-ga2c01d4f5_640.jpg') }}" alt="">
+                        src="{{ asset('img/home/content/img8.jpg') }}" alt="">
                 </figure>
                 <header class="mt-2">
 
                     <h1 class="text-center text-xl text-gray-400">
-                        Lorem, ipsum.
+                        Biblioteca
                     </h1>
-                    <p class="text-sm text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Dignissimos, aspernatur?</p>
+                    <p class="text-sm text-gray-300"></p>
                 </header>
             </article>
         </div>
