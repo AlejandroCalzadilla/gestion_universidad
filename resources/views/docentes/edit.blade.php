@@ -101,18 +101,7 @@
 
             <div class="col-md-6">
 
-                <div class="form-group">
-                    {!! Form::label('pais', 'Pais: ') !!}
-                    {!! Form::text('pais', null, [
-                        'class' => 'form-control' . ($errors->has('pais') ? ' is-invalid' : ''),
-                        'placeholder' => 'Seleccione el Pais de origen...',
-                    ]) !!}
-                    @error('pais')
-                        <span class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div> 
+               
                 <div class="form-group">
                     {!! Form::label('email', 'Email: ') !!}
                     {!! Form::email('email', null, [

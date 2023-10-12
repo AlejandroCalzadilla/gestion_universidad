@@ -98,19 +98,7 @@
                         </span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    {!! Form::label('pais', 'Pais: ') !!}
-                    {!! Form::text('pais', null ,  [
-                        'class' => 'form-control' . ($errors->has('pais') ? ' is-invalid' : ''),
-                        'placeholder' => 'escriba el pais de origrn del docente...',
-                    ]) !!}
-                    @error('pais')
-                        <span class="invalid-feedback">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
+                
                 
                
             </div>     
@@ -163,7 +151,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    {!! Form::label('descripcionT', 'CURRICULUON: ') !!}
+                    {!! Form::label('descripcionT', 'CURRICULUM: ') !!}
                     {!! Form::textarea('descripcionT', null, [
                         'class' => 'form-control' . ($errors->has('descripciont') ? ' is-invalid' : ''),
                         'placeholder' => 'detalle el curriculuom del docente..',

@@ -36,7 +36,7 @@ class DocenteController extends Controller
             'edad' => 'required',
             'sexo' => 'required',
             'descripcionT' => 'required',
-            'pais'=>'required',
+            
             'email'=>'required',
 
    
@@ -50,7 +50,7 @@ class DocenteController extends Controller
             'edad' => $request->edad,
             'sexo' => $request->sexo,
             'descripcionT' => $request->descripcionT,
-            'pais'=>$request->pais,
+            
             'email'=>$request->email,
         ]);
 
@@ -95,7 +95,7 @@ class DocenteController extends Controller
             'edad' => 'required',
             'sexo' => 'required',
             'descripcionT' => 'required',
-            'pais'=>'required',
+            
             'email'=>'required',
 
    
@@ -109,7 +109,7 @@ class DocenteController extends Controller
             'edad' => $request->edad,
             'sexo' => $request->sexo,
             'descripcionT' => $request->descripcionT,
-            'pais'=>$request->pais,
+            
             'email'=>$request->email,
         ]);
 
