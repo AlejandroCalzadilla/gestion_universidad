@@ -119,7 +119,7 @@ class EstudianteController extends Controller
             'pais'=>$request->pais,
             'titulo_bachiller'=>$request->titulo_bachiller,
             'email'=>$request->email,
-            'user_id' => 'nullable|exists:users,id|unique:personals,user_id,' . $estudiante->id  
+            'user_id' => 'nullable|exists:users,id|unique:estudiante,user_id,' . $estudiante->id  
         ]);
      
 

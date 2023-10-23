@@ -97,7 +97,7 @@ class DocenteController extends Controller
             'descripcionT' => 'required',
             
             'email'=>'required',
-            'user_id' => 'nullable|exists:users,id|unique:personals,user_id,' . $docente->id  
+            'user_id' => 'nullable|exists:users,id|unique:docentes,user_id,' . $docente->id  
    
         ]);
 

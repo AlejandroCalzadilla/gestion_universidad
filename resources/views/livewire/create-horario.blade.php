@@ -7,7 +7,7 @@
 {{-- 
                     <div class="form-group">
                         <label for="horario">Horario </label>
-                        <input type="text" class="form-control @error('fecha') is-invalid @enderror" placeholder=" el texto  puede ser válido en los siguientes formatos:
+                        <input type="text" class="form-control @error('horario') is-invalid @enderror" placeholder=" el texto  puede ser válido en los siguientes formatos:
 
                         [Día de la semana] [Hora de inicio]-[Hora de finalización]
                         [Día de la semana] [Hora de inicio]-[Hora de finalización] [Número de teléfono]-[modulo-aula]
@@ -27,8 +27,7 @@
 
                     <div class="form-group">
                         <label for="horario">Horario </label>
-                        <input type="text" class="form-control @error('horario') is-invalid @enderror" placeholder=" el texto  puede ser     lu-18:15-19:45-235-41-mi-18:15-19:45-245-41-lu-18:15-19:45-236-41
-                            nota: si debe escribir con espacios 
+                        <input type="text" class="form-control @error('horario') is-invalid @enderror" placeholder=" introdusca el horario 
                         "
                         wire:model="horario" >
                         @error('horario')
@@ -38,7 +37,9 @@
                         @enderror
                     </div>
                     
-
+                    <p>
+                        formato de horario:lu-18:15-19:45-235-41  o lu-18:15-19:45-235-41-mi-18:15-19:45-245-41
+                    </p> 
 
 
 
@@ -84,6 +85,8 @@
                             </span>
                         @enderror
                     </div> 
+                  
+
                     {{-- <div class="form-group">
                         <label for="materia_id">Materia:</label>
                         <select class="form-control @error('materia_id') is-invalid @enderror" wire:model="materia_id">

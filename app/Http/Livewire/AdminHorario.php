@@ -127,14 +127,60 @@ class AdminHorario extends Component
         $bitacora->user_id = auth()->id();
         $bitacora->save();
         
-        return back()->with('info', 'Horario eliminada y stock actualizado exitosamente.');
+        return back()->with('info', 'Horario eliminado exitosamente.');
     }
   
 
-  
+    public function aplicarFiltros()
+    {
+        // Este método se dispara cuando el usuario hace clic en el botón "Aplicar filtros"
+        // No necesitas hacer nada aquí porque los datos se actualizan automáticamente gracias a Livewire
+    }
+
+    public function resetFiltros()
+    {
+        $this->reset(['filtroNivel', 'filtroDocente', 'filtroCupos']);
+    }
+    public function updatedFiltroNivel()
+    {
+        $this->limpiar_page();
+    }
+
+    public function updatedFiltroDocente()
+    {
+        $this->limpiar_page();
+    }
+
+    public function updatedFiltroCupos()
+    {
+        $this->limpiar_page();
+    }
+
+    
+
+    public function limpiar_page()
+    {
+        $this->resetPage();
+    }
+    
+    
     public function render()
     {
         $horarios = Horario::query();
+      /*
+        if ($this->filtroNivel) {
+            $horarios->where('materia_id', $this->filtroProveedor);
+        }
+
+        if ($this->filtroAlmacen) {
+            $horarios->where('docente_id', $this->filtroAlmacen);
+        }
+
+        if ($this->filtroDesdeFecha) {
+            $horarios->whereDate('cupo', '>=', $this->filtroDesdeFecha);
+        }
+
+     */
 
         $horarios = $horarios->paginate(6);
 
