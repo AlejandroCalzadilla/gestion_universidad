@@ -75,9 +75,9 @@
             <div class="col-md-6">
                  <div class="form-group">
                     {!! Form::label('periodo', 'Periodo: ') !!}
-                    {!! Form::number('periodo', null, [
+                    {!! Form::text('periodo', null, [
                         'class' => 'form-control' . ($errors->has('periodo') ? ' is-invalid' : ''),
-                        'placeholder' => 'Escriba el apellido paterno del estudiante...',
+                        'placeholder' => 'Escriba el periodo de ingreso...',
                     ]) !!}
                     @error('periodo')
                         <span class="invalid-feedback">
@@ -198,6 +198,21 @@
                     </span>
                 @enderror
             </div> 
+
+
+            <div class="form-group">
+                {!! Form::label('user_id', 'Usuarios libres: ') !!}
+                {!! Form::select('user_id', $users->pluck('email', 'id'), null, [
+                    'class' => 'form-control' . ($errors->has('user_id') ? ' is-invalid' : ''),
+                    'placeholder' => 'Seleccione la cuenta de usuario...',
+                ]) !!}
+                @error('user_id')
+                    <span class="invalid-feedback">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
 
         </div> 
 

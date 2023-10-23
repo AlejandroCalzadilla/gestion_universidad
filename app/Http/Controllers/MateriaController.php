@@ -80,7 +80,7 @@ class MateriaController extends Controller
  
          $materia->update([
          
-            'sigla' => $request->nombre,
+            'sigla' => $request->sigla,
             'nombre' => $request->nombre,
             
         ]);

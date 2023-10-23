@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Estudiante;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
@@ -32,6 +33,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonalSeeder::class);
         $this->call(ClienteSeeder::class);
         $this->call(CarreraSeeder::class);
+        $this->call(GrupoSeeder::class);
+        $this->call(MateriaSeeder::class);
+        $this->call(DocenteSeeder::class);
+        $this->call(EstudianteSeeder::class);
          // No necesita llamar a TelefonoSeeder, porque los teléfonos son creados en ClienteSeeder.
 
     }

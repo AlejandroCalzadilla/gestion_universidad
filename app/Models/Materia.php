@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Carrera;
 use App\Models\Grupo;
+use App\Models\Horario;
 class Materia extends Model
 {
     use HasFactory;
@@ -25,6 +26,11 @@ class Materia extends Model
     public function grupos()
     {
         return $this->hasMany(Grupo::class);
+    }
+
+    public function horario()
+    {
+        return $this->hasMany(Horario::class);
     }
 
 

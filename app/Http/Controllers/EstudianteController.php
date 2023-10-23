@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Bitacora;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class EstudianteController extends Controller
@@ -21,8 +22,10 @@ class EstudianteController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('estudiante.create');
+    { 
+
+        $users = User::whereDoesntHave('docente')->get(); 
+        return view('estudiante.create',['users' => $users]);
     }
 
     /**
@@ -30,7 +33,7 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData= $request->validate([
             
             'codigo' => 'required',
             'ci' => 'required',
@@ -43,25 +46,19 @@ class EstudianteController extends Controller
             'titulo_bachiller'=>'required',
             'pais'=>'required',
             'email'=>'required',
+            'user_id' => 'nullable|exists:users,id',
         ]);
+  
+        $estudiante = new Estudiante($validatedData);
+        $estudiante->save();
 
-        Estudiante::create([
-            'codigo' =>$request->codigo ,
-            'ci' => $request->ci,
-            'nombre' => $request->nombre,
-            'sexo' => $request->sexo,
-            'telefono' => $request->telefono,
-            'fecha_nacimiento' => $request->fecha_nacimiento,
-            'modalidad_ingreso'=>$request->modalidad_ingreso,
-            'periodo'=>$request->periodo,
-            'pais'=>$request->pais,
-            'titulo_bachiller'=>$request->titulo_bachiller,
-            'email'=>$request->email,
+       
 
-        ]);
+
+      
 
         $bitacora = new Bitacora();
-        $bitacora->accion = '+++CREAR Estudiante';
+        $bitacora->accion = '+++CREAR ESTUDIANTE';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
@@ -85,7 +82,9 @@ class EstudianteController extends Controller
      */
     public function edit(Estudiante $estudiante)
     {
-        return view('estudiante.edit', compact('estudiante'));
+
+        $users = User::doesntHave('docente')->orWhere('id', $estudiante->user_id)->get(); 
+        return view('estudiante.edit', compact('estudiante','users'));
     }
 
     /**
@@ -94,30 +93,57 @@ class EstudianteController extends Controller
     public function update(Request $request,Estudiante $estudiante)
     {
         $request->validate([
-            'ci'=> 'required',
+            
+            'codigo' => 'required',
+            'ci' => 'required',
             'nombre' => 'required',
-            'materno' => 'required',
-            'paterno' => 'required',
-            'edad' => 'required',
             'sexo' => 'required',
-            'descripcionT' => 'required',
+            'telefono' => 'required',
+            'fecha_nacimiento' => 'required',
+            'modalidad_ingreso'=>'required',
+            'periodo'=>'required',
+            'titulo_bachiller'=>'required',
             'pais'=>'required',
             'email'=>'required',
-
-   
         ]);
 
          $estudiante->update([
-            'ci'=> $request->ci,
+            'codigo' =>$request->codigo ,
+            'ci' => $request->ci,
             'nombre' => $request->nombre,
-            'materno' => $request->materno,
-            'paterno' => $request->paterno,
-            'edad' => $request->edad,
             'sexo' => $request->sexo,
-            'descripcionT' => $request->descripcionT,
+            'telefono' => $request->telefono,
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'modalidad_ingreso'=>$request->modalidad_ingreso,
+            'periodo'=>$request->periodo,
             'pais'=>$request->pais,
+            'titulo_bachiller'=>$request->titulo_bachiller,
             'email'=>$request->email,
+            'user_id' => 'nullable|exists:users,id|unique:personals,user_id,' . $estudiante->id  
         ]);
+     
+
+        if ($request->user_id != $estudiante->user_id) {
+
+            // Si el Personal actual tiene un User asociado, desasociar
+            if ($estudiante->user) {
+                $estudiante->user()->dissociate();
+                $estudiante->save();
+            }
+
+            // Si se proporcionó un user_id en el request, encontrar ese User y asociarlo con este Personal
+            if ($request->user_id) {
+                $user = User::find($request->user_id);
+                $estudiante->user()->associate($user);
+                $estudiante->save();
+            }
+        }
+      
+
+
+
+
+
 
         $bitacora = new Bitacora();
         $bitacora->accion = '***ACTUALIZAR Estudiante';
@@ -128,7 +154,7 @@ class EstudianteController extends Controller
 
         // Código adicional o redireccionamiento después de actualizar el cliente
 
-        return redirect()->route('estudiantes.index')->with('info', 'Estudiante  actualizado exitosamente.');
+        return redirect()->route('estudiante.index')->with('info', 'Estudiante  actualizado exitosamente.');
     }
 
     /**

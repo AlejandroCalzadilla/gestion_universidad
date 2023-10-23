@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('periodo');
             $table->string('titulo_bachiller');
             $table->string('email');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

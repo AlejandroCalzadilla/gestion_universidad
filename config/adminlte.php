@@ -342,7 +342,7 @@ return [
             'can' => 'Administrar usuarios',
             
             'submenu' => [
-                 /*
+                 
                 [
                     'text' => 'Usuarios',
                     'route'  => 'admin.users.index',
@@ -358,13 +358,14 @@ return [
                     'active' => ['roles*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar role',
                 ],
+                /*
                 [
                     'text' => 'Personal',
                     'route'  => 'personal.index',
                     'icon'    => 'fas fa-fw fa-briefcase',
                     'active' => ['personal*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar personal',
-                ],
+                ],*/
                 [
                     'text' => 'Bitacora',
                     'route'  => 'bitacora.index',
@@ -372,14 +373,16 @@ return [
                     'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar bitacora',
                 ],
-                */
+                
                 [
-                    'text' => 'Carrera',
+                    'text' => ' Admin-Carrera',
                     'route'  => 'carreras.index',
                     'icon'    => 'fas fa-fw fa-home',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Listar bitacora',
                 ],
+
+              
 
 
             ],
@@ -405,6 +408,7 @@ return [
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Listar bitacora',
                 ],
+               
                 [
                     'text' => 'Admin-Materias',
                     'route'  => 'materias.index',
@@ -466,7 +470,7 @@ return [
             ],
         ], */
          
-        /*[
+        [
             'text'    => 'Administrar compras',
             'icon'    => 'fas fa-fw fa-tags',
             'can' => 'Administrar compras',
@@ -496,8 +500,10 @@ return [
 
 
             ],
-        ],*/
-       /* [
+        ],
+
+        /*
+         [
             'text'    => 'Administrar Inventario',
             'icon'    => 'fas fa-fw fa-warehouse',
             'can' => 'Administrar inventario',
@@ -540,8 +546,50 @@ return [
                 ],
 
             ],
-        ],
-          */
+        ],*/
+        [
+            'text'    => 'Inscripciones',
+            'icon'    => 'fas fa-fw fa-calendar',
+            'can' => 'Administrar inventario',
+            'submenu' => [
+                [
+                    'text' => 'Admin-Grupos',
+                    'route'  => 'grupos.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'Admin-Horario',
+                    'route'  => 'horarios.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'Admin-boleta',
+                    'route'  => 'horarios.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                ],
+                [
+                    'text' => 'inscripcion',
+                    'route'  => 'horarios.index',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Listar bitacora',
+                    'submenu' => [
+                        [
+                            'text' => 'level_one',
+                            'url'  => '#',
+                        ],
+                    ]
+                ],
+        ]
+        ,
+            ],
+        
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',

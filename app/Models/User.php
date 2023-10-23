@@ -70,6 +70,21 @@ class User extends Authenticatable
     {
         return $this->hasOne(Personal::class);
     }
+
+
+     //realcion uno a uno
+    public function docente()
+    {
+        return $this->hasOne(Docente::class);
+    }
+
+    public function estudiante()
+    {
+        return $this->hasOne(Estudiante::class);
+    }
+
+
+
     //relacion de uno a muchos
     public function bitacoras(){
         return $this->hasMany(Bitacora::class);

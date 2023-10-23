@@ -23,4 +23,11 @@ class Estudiante extends Model
         'email',
         // otras propiedades aquí
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

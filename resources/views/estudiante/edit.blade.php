@@ -41,7 +41,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        {!! Form::model($estudiante, ['route' => ['admin.parabrisa.update', $estudiante], 'method' => 'put']) !!}
+        {!! Form::model($estudiante, ['route' => ['estudiante.update', $estudiante], 'method' => 'put']) !!}
 
         
         <div class="row">
@@ -76,9 +76,9 @@
             <div class="col-md-6">
                  <div class="form-group">
                     {!! Form::label('periodo', 'Periodo: ') !!}
-                    {!! Form::number('periodo', null, [
+                    {!! Form::text('periodo', null, [
                         'class' => 'form-control' . ($errors->has('periodo') ? ' is-invalid' : ''),
-                        'placeholder' => 'Escriba el apellido paterno del estudiante...',
+                        'placeholder' => 'Escriba el periodo del estudiante...',
                     ]) !!}
                     @error('periodo')
                         <span class="invalid-feedback">
@@ -119,7 +119,7 @@
 
                 <div class="form-group">
                     {!! Form::label('telefono', 'Telefono: ') !!}
-                    {!! Form::number('telefono', null ,  [
+                    {!! Form::text('telefono', null ,  [
                         'class' => 'form-control' . ($errors->has('telefono') ? ' is-invalid' : ''),
                         'placeholder' => 'escriba el telefono del estudiante...',
                     ]) !!}
@@ -189,7 +189,7 @@
             
             <div class="form-group">
                 {!! Form::label('titulo_bachiller', ' Titulo de bachiller: ') !!}
-                {!! Form::number('titulo_bachiller', null ,  [
+                {!! Form::text('titulo_bachiller', null ,  [
                     'class' => 'form-control' . ($errors->has('titulo_bachiller') ? ' is-invalid' : ''),
                     'placeholder' => 'escriba el codigo del titulo de bachiller...',
                 ]) !!}
@@ -199,7 +199,18 @@
                     </span>
                 @enderror
             </div> 
-
+            <div class="form-group">
+                {!! Form::label('user_id', 'Usuarios libres: ') !!}
+                {!! Form::select('user_id', $users->pluck('email', 'id'), null, [
+                    'class' => 'form-control' . ($errors->has('user_id') ? ' is-invalid' : ''),
+                    'placeholder' => 'Seleccione la cuenta de usuario...',
+                ]) !!}
+                @error('user_id')
+                    <span class="invalid-feedback">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
            
 
             </div> 

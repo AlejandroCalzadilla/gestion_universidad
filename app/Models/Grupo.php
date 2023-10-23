@@ -6,12 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Docente;
 use App\Models\Materia;
+use App\Models\Horario;
 
 class Grupo extends Model
 {
     use HasFactory;
 
-
+    protected $fillable = [
+        'nombre',
+        
+        // otras propiedades aquí
+    ];
 
 
     public function docente()
@@ -19,10 +24,9 @@ class Grupo extends Model
         return $this->belongsTo(Docente::class);
     }
  
-    public function materia()
+    public function horario()
     {
-        return $this->belongsTo(Materia::class);
+        return $this->hasMany(Horario::class);
     }
-   
 
 }

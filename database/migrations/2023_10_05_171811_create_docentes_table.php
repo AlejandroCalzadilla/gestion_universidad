@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('sexo');
             $table->string('edad');
             $table->string('descripcionT');
-         
             $table->string('email');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

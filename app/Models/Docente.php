@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Grupo;
-
+use App\Models\Horario;
 class Docente extends Model
 {
     use HasFactory;
@@ -24,11 +24,15 @@ class Docente extends Model
         // otras propiedades aquí
     ];
 
-    //docente puede estar en muchos grupos 
-    public function grupos()
+    //docente puede estar en muchos horarios 
+    public function horario()
     {
-        return $this->hasMany(Grupo::class);
+        return $this->hasMany(Horario::class);
     }
-
+   
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

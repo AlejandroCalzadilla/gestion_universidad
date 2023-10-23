@@ -92,5 +92,22 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'Crear vehiculo']);//61
         Permission::create(['name' => 'Eliminar vehiculo']);//62
 
+
+
+        Permission::create(['name' => 'Listar docentes']);//59
+        Permission::create(['name' => 'Editar docentes']);//60
+        Permission::create(['name' => 'Crear docentes']);//61
+        Permission::create(['name' => 'Eliminar docentes']);//62
+
+
+
+
+
+
+
+
+
+
+
     }
 }

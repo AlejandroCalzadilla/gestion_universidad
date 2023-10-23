@@ -103,7 +103,18 @@
                
             </div>     
             
-            
+            <div class="form-group">
+                {!! Form::label('user_id', 'Usuarios libres: ') !!}
+                {!! Form::select('user_id', $users->pluck('email', 'id'), null, [
+                    'class' => 'form-control' . ($errors->has('user_id') ? ' is-invalid' : ''),
+                    'placeholder' => 'Seleccione la cuenta de usuario...',
+                ]) !!}
+                @error('user_id')
+                    <span class="invalid-feedback">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
 
             <div class="col-md-6">

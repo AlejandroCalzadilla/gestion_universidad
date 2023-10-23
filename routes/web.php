@@ -23,8 +23,10 @@ use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\CarrreraController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\MateriaController;
+use App\Http\Controllers\GrupoController;
 use App\Models\Carrera;
 use App\Models\Estudiante;
+use App\Http\Controllers\HorarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +59,8 @@ Route::resource('docentes',DocenteController::class);
 Route::resource('materias',MateriaController::class);
 Route::resource('carreras',CarrreraController::class);
 Route::resource('estudiante',EstudianteController::class);
+Route::resource('grupos',GrupoController::class);
+Route::resource('horarios',HorarioController::class);
 
 
 

@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\Bitacora;
 use App\Models\Grupo;
 use App\Models\Materia;
+use Illuminate\Validation\Rule;
 class GrupoController extends Controller
 {
     public function index()
     {
+
+        
         return view('grupos.index');
     }
  
@@ -18,7 +21,14 @@ class GrupoController extends Controller
      */
     public function create()
     {
-        return view('materias.create');
+        return view('grupos.create');
+    }
+ 
+
+
+    public function edit(Grupo $grupo)
+    {
+        return view('grupos.edit', compact('grupo'));
     }
  
     /**
@@ -26,27 +36,21 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([          
-            'sigla' => 'required',
-            'nombre' => 'required',
-        ]);
+        $data = $request->validate([
+            'nombre' => 'required',            
+        ]);    
+        Grupo::create($data);
  
-        Materia::create([
-          
-            'sigla' => $request->sigla,
-            'nombre' => $request->nombre,
-           
-        ]);
- 
+
         $bitacora = new Bitacora();
-        $bitacora->accion = '+++CREAR MATERIA';
+        $bitacora->accion = '+++CREAR Grupo';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
         $bitacora->save();
         // Código adicional o redireccionamiento después de guardar el cliente
  
-        return redirect()->route('materias.index')->with('info', 'Materia creada exitosamente.');
+        return redirect()->route('grupos.index')->with('info', 'Grupo creada exitosamente.');
     }
  
     /**
@@ -61,15 +65,11 @@ class GrupoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Materia $materia)
-    {
-        return view('materias.edit', compact('materia'));
-    }
- 
+    
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,Materia $materia)
+    public function update(Request $request,Grupo $grupo)
     {
         $request->validate([
           
@@ -78,9 +78,8 @@ class GrupoController extends Controller
              
         ]);
  
-         $materia->update([
+         $grupo->update([
          
-            'sigla' => $request->nombre,
             'nombre' => $request->nombre,
             
         ]);
@@ -111,6 +110,6 @@ class GrupoController extends Controller
         $bitacora->user_id = auth()->id();
         $bitacora->save();
  
-        return redirect()->route('materias.index')->with('info', 'La Materia se eliminó con éxito!');
+        return redirect()->route('materias.index')->with('info', 'el grupo se eliminó con éxito!');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Docente;
 use App\Models\Bitacora;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class DocenteController extends Controller
@@ -20,7 +21,11 @@ class DocenteController extends Controller
      */
     public function create()
     {
-        return view('docentes.create');
+      
+        $users = User::whereDoesntHave('docente')->get();
+
+        // Pasamos la lista de usuarios a la vista.
+        return view('docentes.create', ['users' => $users]);
     }
 
     /**
@@ -28,31 +33,25 @@ class DocenteController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+
+         
+        $validatedData=$request->validate([
             'ci'=> 'required',
             'nombre' => 'required',
             'materno' => 'required',
             'paterno' => 'required',
             'edad' => 'required',
             'sexo' => 'required',
-            'descripcionT' => 'required',
-            
+            'descripcionT' => 'required', 
             'email'=>'required',
-
+            'user_id' => 'nullable|exists:users,id',
    
         ]);
 
-        Docente::create([
-            'ci'=> $request->ci,
-            'nombre' => $request->nombre,
-            'materno' => $request->materno,
-            'paterno' => $request->paterno,
-            'edad' => $request->edad,
-            'sexo' => $request->sexo,
-            'descripcionT' => $request->descripcionT,
-            
-            'email'=>$request->email,
-        ]);
+       $docente = new Docente($validatedData);
+        $docente->save();
+
+        
 
         $bitacora = new Bitacora();
         $bitacora->accion = '+++CREAR Docente';
@@ -79,7 +78,8 @@ class DocenteController extends Controller
      */
     public function edit(Docente $docente)
     {
-        return view('docentes.edit', compact('docente'));
+        $users = User::doesntHave('docente')->orWhere('id', $docente->user_id)->get();
+        return view('docentes.edit', compact('docente','users'));
     }
 
     /**
@@ -97,10 +97,30 @@ class DocenteController extends Controller
             'descripcionT' => 'required',
             
             'email'=>'required',
-
+            'user_id' => 'nullable|exists:users,id|unique:personals,user_id,' . $docente->id  
    
         ]);
 
+
+
+        if ($request->user_id != $docente->user_id) {
+
+            // Si el Personal actual tiene un User asociado, desasociar
+            if ($docente->user) {
+                $docente->user()->dissociate();
+                $docente->save();
+            }
+
+            // Si se proporcionó un user_id en el request, encontrar ese User y asociarlo con este Personal
+            if ($request->user_id) {
+                $user = User::find($request->user_id);
+                $docente->user()->associate($user);
+                $docente->save();
+            }
+        }
+
+
+       /*
          $docente->update([
             'ci'=> $request->ci,
             'nombre' => $request->nombre,
@@ -111,7 +131,7 @@ class DocenteController extends Controller
             'descripcionT' => $request->descripcionT,
             
             'email'=>$request->email,
-        ]);
+        ]);*/
 
         $bitacora = new Bitacora();
         $bitacora->accion = '***ACTUALIZAR CLIENTE';
@@ -124,6 +144,9 @@ class DocenteController extends Controller
 
         return redirect()->route('docentes.index')->with('info', 'Docente actualizado exitosamente.');
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.

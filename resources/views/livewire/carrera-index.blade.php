@@ -21,9 +21,11 @@
                 placeholder="Escriba un nombre ..." type="text">
         </div> --}}
         @can('Crear almacen')
-            <div class="card-header">
-             <a class="btn btn-secondary" href="{{ route('carreras.create') }}">NUEVA CARRERA</a> 
+            <div class="card-header ">            
+             <a class="btn bg-gradient-primary" href="{{ route('carreras.create') }}">NUEVA CARRERA</a> 
             </div>
+
+               
         @endcan
 
         @if ($carreras->count())
