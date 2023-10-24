@@ -27,6 +27,8 @@ use App\Http\Controllers\GrupoController;
 use App\Models\Carrera;
 use App\Models\Estudiante;
 use App\Http\Controllers\HorarioController;
+use App\Models\Docente;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +64,8 @@ Route::resource('carreras',CarrreraController::class);
 
 Route::resource('estudiante',EstudianteController::class);
 Route::get('estudiantes', [EstudianteController::class, 'perfil'])->name('estudiante.perfil');
+Route::get('docentes', [DocenteController::class, 'perfil'])->name('docentes.perfil');
+
 /*Route::get('estudiante', [EstudianteController::class, 'index'])->name('estudiante.index');
 Route::get('estudiante/create', [EstudianteController::class, 'create'])->name('estudiante.create');
 Route::post('estudiante', [EstudianteController::class, 'store'])->name('estudiante.store');

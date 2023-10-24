@@ -91,6 +91,11 @@ class UserSeeder extends Seeder
             'email' => 'alejandro123sc@gmail.com',
             'password' => bcrypt(12345678)
         ])->assignRole('Administrador');
+        User::create([
+            'name' => 'Sergio',
+            'email' => 'scam@gmail.com',
+            'password' => bcrypt(12345678)
+        ])->assignRole('Administrador');
 
         //EJECUTIVOS DE VENTAS(VENDEDORES)
         /*  

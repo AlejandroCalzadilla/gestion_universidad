@@ -4,10 +4,21 @@
         <input wire:keydown="limpiar_page" wire:model="buscar" class="form-control w-100"
             placeholder="Escriba un nombre ..." type="text">
     </div> --}}
+   
+
+    @if (session('info'))
+    <div class="alert alert-primary" role="alert">
+        <strong>¡Éxito!</strong>
+        {{ session('info') }}
+    </div>
+    @endif
+
+    @can('Crear materias')
     <div class="card-header">
         <a class="btn btn-info" href="{{ route('grupos.create') }}">nuevo grupo</a>
     </div>
-
+    @endcan
+    
     @if ($grupos->count())
         <div class="card-body">
             <table class="table table-striped">
@@ -35,8 +46,8 @@
 
                             @can('Editar grupos')
                             <td width="10px">
-                                <a class="btn btn-primary"" href="{{ route('grupos.edit', $grupo) }}"><i
-                                        class="fas fa-user-edit"></i></a>
+                                <a class="btn btn-primary" href="{{ route('grupos.edit', $grupo) }}">
+                                    <i class="fas fa-user-edit"></i></a>
                             </td>
                            @endcan
                             
