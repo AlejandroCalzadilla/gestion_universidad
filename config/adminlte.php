@@ -416,6 +416,13 @@ return [
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Ver estudiantes',
                 ],
+                [
+                    'text' => 'PerfilD',
+                    'route'  => 'docente.perfil',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Ver estudiantes',
+                ],
                 
                 [
                     'text' => 'Admin-Materias',

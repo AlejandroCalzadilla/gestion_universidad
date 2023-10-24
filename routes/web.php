@@ -64,7 +64,7 @@ Route::resource('carreras',CarrreraController::class);
 
 Route::resource('estudiante',EstudianteController::class);
 Route::get('estudiantes', [EstudianteController::class, 'perfil'])->name('estudiante.perfil');
-Route::get('docentes', [DocenteController::class, 'perfil'])->name('docentes.perfil');
+Route::get('docente', [DocenteController::class, 'perfil'])->name('docente.perfil');
 
 /*Route::get('estudiante', [EstudianteController::class, 'index'])->name('estudiante.index');
 Route::get('estudiante/create', [EstudianteController::class, 'create'])->name('estudiante.create');
