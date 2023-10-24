@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
             'name' => 'Camilo Sarmiento',
             'email' => 'camilo123sc@gmail.com',
             'password' => bcrypt(12345678)
-        ])->assignRole('Administrador');
+        ])->assignRole('estudiante');
         User::create([
             'name' => 'Alejandro Calzadilla',
             'email' => 'alejandro123sc@gmail.com',
@@ -93,7 +93,7 @@ class UserSeeder extends Seeder
         ])->assignRole('Administrador');
 
         //EJECUTIVOS DE VENTAS(VENDEDORES)
-
+        /*  
         User::create([
             'name' => 'Pedro Fernandez',
             'email' => 'pedrofer123sc@gmail.com',
@@ -104,5 +104,6 @@ class UserSeeder extends Seeder
             'email' => 'diego123sc@gmail.com',
             'password' => bcrypt(12345678)
         ])->assignRole('Ejecutivo de ventas');
+        */
     }
 }

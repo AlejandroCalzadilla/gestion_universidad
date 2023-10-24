@@ -58,7 +58,18 @@ Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('docentes',DocenteController::class);
 Route::resource('materias',MateriaController::class);
 Route::resource('carreras',CarrreraController::class);
-Route::resource('estudiante',EstudianteController::class);
+
+
+//Route::resource('estudiante',EstudianteController::class);
+Route::get('estudiante', [EstudianteController::class, 'index'])->name('estudiante.index');
+Route::get('estudiante/create', [EstudianteController::class, 'create'])->name('admin.categoria.create');
+Route::post('estudiante', [EstudianteController::class, 'store'])->name('estudiante.store');
+Route::get('estudiante', [EstudianteController::class, 'show'])->name('estudiante.show');
+Route::get('estudiante/{estudiante}/edit', [EstudianteController::class, 'edit'])->name('estudiante.edit');
+Route::put('estudiante/{estudiante}', [EstudianteController::class, 'update'])->name('admin.estudiante.update');
+Route::delete('estudiante/{estudiante}', [EstudianteController::class, 'destroy'])->name('estudiante.destroy');
+
+
 Route::resource('grupos',GrupoController::class);
 Route::resource('horarios',HorarioController::class);
 

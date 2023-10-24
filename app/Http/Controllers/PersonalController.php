@@ -9,13 +9,17 @@ use Illuminate\Http\Request;
 
 class PersonalController extends Controller
 {
+    /* 
     public function __construct()
     {
+       
+       
         $this->middleware('can:Listar personal')->only('index');
         $this->middleware('can:Editar personal')->only('edit', 'update');
         $this->middleware('can:Crear personal')->only('create', 'store');
         $this->middleware('can:Eliminar personal')->only('destroy');
     }
+    */
     public function index()
     {
         return view('personal.index');

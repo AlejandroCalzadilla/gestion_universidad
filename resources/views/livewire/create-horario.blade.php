@@ -75,7 +75,7 @@
                         <label for="materia_id">Materia: </label>
                         <select class="form-control @error('materia_id') is-invalid @enderror" wire:model="materia_id">
                             <option value="">Seleccione un materia...</option>
-                            @foreach($carrera->materias as $materia)
+                            @foreach($materias as $materia)
                                 <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
                             @endforeach
                         </select>

@@ -9,6 +9,19 @@ use App\Models\Materia;
 use Illuminate\Validation\Rule;
 class GrupoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar grupos')->only('index');
+        $this->middleware('can:Editar grupos')->only('edit', 'update');
+        $this->middleware('can:Crear grupos')->only('create', 'store');
+        $this->middleware('can:Eliminar grupos')->only('destroy');
+    }
+
+
+
+
+
     public function index()
     {
 

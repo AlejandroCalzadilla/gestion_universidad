@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class VehiculoController extends Controller
 {
-
+   /*
     public function __construct()
     {
         $this->middleware('can:Listar vehiculo')->only('index');
@@ -17,6 +17,8 @@ class VehiculoController extends Controller
         $this->middleware('can:Crear vehiculo')->only('create', 'store');
         $this->middleware('can:Eliminar vehiculo')->only('destroy');
     }
+
+    */
     public function index()
     {
         return view('vehiculos.index');

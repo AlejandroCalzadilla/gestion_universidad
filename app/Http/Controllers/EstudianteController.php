@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Bitacora;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EstudianteController extends Controller
 {
    
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar estudiantes')->only('index');
+        $this->middleware('can:Ver estudiantes')->only('show');
+        $this->middleware('can:Editar estudiantes')->only('edit', 'update');
+        $this->middleware('can:Crear estudiantes')->only('create', 'store');
+        $this->middleware('can:Eliminar estudiantes')->only('destroy');
+    }
+
 
     public function index()
     {
@@ -71,10 +82,18 @@ class EstudianteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Estudiante $estudiante)
+   // public $estudiante;
+    public function show()
 
     {
+
+        
         //
+        $user = Auth::user();
+        $estudiante = $user->estudiante ?? null;
+        
+        
+        return view('estudiante.show', compact('estudiante'));
     }
 
     /**
@@ -140,7 +159,7 @@ class EstudianteController extends Controller
         }
       
 
-
+        $estudiante->update($request->except('user_id'));
 
 
 

@@ -8,6 +8,16 @@ class HorarioController extends Controller
 {
     //
 
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar horarios')->only('index');
+        //$this->middleware('can:Editar estudiantes')->only('edit', 'update');
+        //$this->middleware('can:Crear estudiantes')->only('create', 'store');
+        //$this->middleware('can:Eliminar estudiantes')->only('destroy');
+    }
+
+
     public function index()
     {
         return view('horarios.index');

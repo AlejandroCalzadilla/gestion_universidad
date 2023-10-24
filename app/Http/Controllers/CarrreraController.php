@@ -10,6 +10,21 @@ class CarrreraController extends Controller
 {
     //
 
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar carreras')->only('index');
+        $this->middleware('can:Editar carreras')->only('edit', 'update');
+        $this->middleware('can:Crear carreras')->only('create', 'store');
+        $this->middleware('can:Eliminar carreras')->only('destroy');
+    }
+
+
+  
+
+
+
+
    //
    public function index()
    {
