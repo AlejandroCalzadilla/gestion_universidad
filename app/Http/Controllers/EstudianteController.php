@@ -19,7 +19,7 @@ class EstudianteController extends Controller
         $this->middleware('can:Listar estudiantes')->only('index');
         $this->middleware('can:Ver estudiantes')->only('show');
         $this->middleware('can:Editar estudiantes')->only('edit', 'update');
-        $this->middleware('can:Crear estudiantes')->only('create', 'store');
+        $this->middleware('can:Crear  estudiantes')->only('create', 'store');
         $this->middleware('can:Eliminar estudiantes')->only('destroy');
     }
 
@@ -35,7 +35,7 @@ class EstudianteController extends Controller
     public function create()
     { 
 
-        $users = User::whereDoesntHave('docente')->get(); 
+        $users = User::whereDoesntHave('estudiante')->get(); 
         return view('estudiante.create',['users' => $users]);
     }
 
@@ -63,10 +63,7 @@ class EstudianteController extends Controller
         $estudiante = new Estudiante($validatedData);
         $estudiante->save();
 
-       
-
-
-      
+    
 
         $bitacora = new Bitacora();
         $bitacora->accion = '+++CREAR ESTUDIANTE';
@@ -90,7 +87,6 @@ class EstudianteController extends Controller
         $user = Auth::user();
         $estudiante = $user->estudiante ?? null;
         
-        
         return view('estudiante.show', compact('estudiante'));
     }
      
@@ -99,8 +95,9 @@ class EstudianteController extends Controller
     public function perfil()
 
     {
-        //
+        //usuario logueado
         $user = Auth::user();
+        //este usario esta relacionado con un estudiante  si no devolver null
         $estudiante = $user->estudiante ?? null;
         
         
