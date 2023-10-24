@@ -1,0 +1,397 @@
+[33mcommit 3f4eccb4062247fd384b51d5a73c8c9ed82d0519[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: bd13471 52a67c6
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Mon Oct 9 16:20:31 2023 -0400
+
+    merge completado
+
+[33mcommit 52a67c6808a3a8e171e80cdcef98cfdee3b92381[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Mon Oct 9 15:03:16 2023 -0400
+
+    carrera_materias_completado
+
+[33mcommit da7a5674e2380392156a5c818870bf693cb8dc85[m[33m ([m[1;31morigin/ale[m[33m)[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Sun Oct 8 21:56:32 2023 -0400
+
+    carrera_materia
+
+[33mcommit bd13471944bb497019e12e1e92976aceded93b17[m[33m ([m[1;31morigin/modificacion2[m[33m)[m
+Author: Sergio Cambara <scambaradorbigny@gmail.com>
+Date:   Sun Oct 8 10:11:05 2023 -0400
+
+    Actualizando
+
+[33mcommit 1e14658515e1d8a5fcce990316c856d4e2253c53[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Fri Oct 6 23:05:46 2023 -0400
+
+    carrera
+
+[33mcommit a6fd22f062f3cc5505dfe1d8b186014eb4bccaad[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Fri Oct 6 12:05:09 2023 -0400
+
+    estudiante
+
+[33mcommit 55b07cbe9923ebf3116c8587fd29660fe3baf53a[m
+Merge: 90b34e4 2394d5b
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Fri Oct 6 12:03:48 2023 -0400
+
+    Merge branch 'Añadiendo_parte1'
+
+[33mcommit 2394d5b5cd7a73ee12c576b475b595ba4283f807[m[33m ([m[1;31morigin/Añadiendo_parte1[m[33m)[m
+Author: Sergio Cambara <scambaradorbigny@gmail.com>
+Date:   Fri Oct 6 11:32:23 2023 -0400
+
+    parte 1
+
+[33mcommit ca20fccc94136edbee450165c05ea59074b23259[m
+Author: Sergio Cambara <scambaradorbigny@gmail.com>
+Date:   Fri Oct 6 11:05:15 2023 -0400
+
+    enviando Parte 1
+
+[33mcommit 90b34e4fccbb3eb2dd1a5624948d91703613255e[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Fri Oct 6 10:41:34 2023 -0400
+
+    docente_rama
+
+[33mcommit d717ab155b545398609ee6d617c2417d840c7798[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Fri Oct 6 09:01:57 2023 -0400
+
+    crud_docente
+
+[33mcommit 7bd7ef6edcd450ff2f74838492f5b80b7241019d[m
+Author: jose Alejandro Calzadilla Nogales <78042869ale@gmail.com>
+Date:   Thu Oct 5 17:04:43 2023 -0400
+
+    ale
+
+[33mcommit 50564d22a2497227a1e50285582f80f5154e933a[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jul 21 14:05:16 2023 -0400
+
+    seeders de users actualizado con los roles asignados
+
+[33mcommit 357d56d9fea4810dfbc1cb90fd4a0da3262fe17a[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jul 21 13:54:27 2023 -0400
+
+    reporte individual de venta y modificando algunos detalles del personalizado
+
+[33mcommit f29f349442e27f3337d516af9197c904dcef8263[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jul 21 12:44:48 2023 -0400
+
+    modificando pestana layouts.guest para el login, etc
+
+[33mcommit a66b8886bb1905bd4fe5681644f8b45031166664[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jul 21 12:41:16 2023 -0400
+
+    modificando nombre pestana
+
+[33mcommit a7227d94cb868540933debf1bfbf66a732de9acd[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jul 21 12:37:25 2023 -0400
+
+    retoques al welcome
+
+[33mcommit b128cd7f2d15ec75f5b8dbc7b722c8cade8f24ff[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jul 4 16:44:58 2023 -0400
+
+    sacando editar cliente y factura de nota venta
+
+[33mcommit ad6a6cc0f28e48538eccba7b88aa0910c180c8d7[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jul 4 15:50:58 2023 -0400
+
+    Corrigiendo detalles 1 actu ventas
+
+[33mcommit 96533b7c6bfeb6cc0410b655badd301c5b4c2200[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jul 3 20:46:32 2023 -0400
+
+    seeders y factorys
+
+[33mcommit 1dbe88147ba0e2ff3080882a4351761117e657bf[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jul 3 19:08:57 2023 -0400
+
+    mejora de vista roles.partials
+
+[33mcommit df8ded29efce8a976dbe5587b2efca23de4edb25[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jul 3 16:37:44 2023 -0400
+
+    avance de las restricciones por roles falta nota de salida
+
+[33mcommit 75a537c15b55984b9af6f0cc590f5bcd0fd1d320[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jul 3 14:32:55 2023 -0400
+
+    privilegios de administrar usuarios
+
+[33mcommit b8f8a93b10b61f9994e6ca3f92f5b9b05cdcda51[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jul 2 19:47:34 2023 -0400
+
+    filtro nota venta mejorado
+
+[33mcommit eb204b9e9edf045e043bb82f7d63d6899a0b7681[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jul 2 19:30:00 2023 -0400
+
+    mostrar user by id DESC
+
+[33mcommit 678cf8b305c4e560bfefcd583246d8bbdfa5f4ad[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jul 2 19:25:55 2023 -0400
+
+    filtrar bitacora por email, name, fecha(desde,hasta)
+
+[33mcommit 2f690bf8b061a45abd71ca3f8f63acf4980ae23d[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jul 2 18:54:26 2023 -0400
+
+    bitacora acabado 1
+
+[33mcommit 43153312ecc457cb254e979dd20940c8505301ee[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jul 2 17:52:59 2023 -0400
+
+    bitacora almacen y config zona horaria
+
+[33mcommit dc03ff3965798774fd6b81af1dd0d0fbd8ab8da6[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 30 17:29:57 2023 -0400
+
+    avance bitacora iniciar y cerrar sesion
+
+[33mcommit 4de9ac67c95900b99ac84bf82182b3d1c1f2ea7c[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 30 16:06:04 2023 -0400
+
+    tocando permisos
+
+[33mcommit 0b1f7045a286923b6e5197a487e6b5480f0a623c[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 30 15:54:59 2023 -0400
+
+    cu personal con user
+
+[33mcommit e0e9428ce984dd93b17de8bb07a22a9141d1f027[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 30 10:22:12 2023 -0400
+
+    reporte personalizado de nota de venta
+
+[33mcommit 1839f1df99e53bc4390da756e34b6ccc748a2f78[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 23:35:15 2023 -0400
+
+    calculo de total ocupado del almacen
+
+[33mcommit ca6fae4151c08f25af344e281f932a476e501bec[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 23:22:44 2023 -0400
+
+    avance 5 eliminar venta con factura
+
+[33mcommit 11a890cd6109bf156f3444f5c4b653c50a2bab74[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 20:08:30 2023 -0400
+
+    avance 4 editar venta con factura
+
+[33mcommit 4bbfb0d479574a04d409de391bf7c183c97bbeed[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 18:37:34 2023 -0400
+
+    avance 3 venta con factura
+
+[33mcommit 78a7bae2311a24ca219ac0c451add317a2572585[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 17:10:25 2023 -0400
+
+    avance 2 notaVenta with buscador de cliente
+
+[33mcommit 85da05eb8d344200a408da83922cae6e3e56e7e1[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 28 13:31:59 2023 -0400
+
+    avance1 NotaVenta
+
+[33mcommit 140627f931c3c7bb0a00db1b41402e853a826b20[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jun 27 06:09:27 2023 -0400
+
+    tabla intermedia NotaVenta-Parabrisa
+
+[33mcommit 427e259345415eaf1a0d4a3800320b96ef2234ba[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jun 27 03:59:08 2023 -0400
+
+    migraciones para NotaVenta
+
+[33mcommit a687e2244eb142b86cdd9021efb0fe6b4aa18fc7[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jun 26 16:33:38 2023 -0400
+
+    models,mig,seed del proceso NotaCompra
+
+[33mcommit 1d47aaa589f92f5fb6cb48a0f9172175817fa1a8[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jun 19 12:57:55 2023 -0400
+
+    gestionar usuarios 3
+
+[33mcommit 22c79faa6235856074ca02812f331bc823656652[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jun 19 12:54:12 2023 -0400
+
+    gestionar usuario 2
+
+[33mcommit ff2f0aeeebf47976b1c9835e52fd328f8cd17ffc[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jun 19 12:29:40 2023 -0400
+
+    gestionar usuario 1
+
+[33mcommit 0f386cfd52bde5c4da6c1c1a43563dec2af4b19f[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Mon Jun 19 10:27:14 2023 -0400
+
+    por si acaso
+
+[33mcommit b9f6a727456ee62cebb3fc2f294f8ade737ad30e[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jun 18 22:47:51 2023 -0400
+
+    filtro de nota de compra 1
+
+[33mcommit 4894610f7a12dc203346c59151cb0ae4fa93bfed[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jun 18 18:22:01 2023 -0400
+
+    ver almacen en PDF 1
+
+[33mcommit 8c1f3f3f18d238943f6426269ccb86d4104ad93e[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun Jun 11 16:21:22 2023 -0400
+
+    Correccion NotaCompra,Vehiculo,Parabrisa bd
+
+[33mcommit 7c89d9c211d42f0450532a8569f690d9ce34ff48[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 9 11:24:14 2023 -0400
+
+    procesos compras fin 4 with js
+
+[33mcommit 20d580058140b236ddea0a28c37de51d2afdd831[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 9 11:20:41 2023 -0400
+
+    procesos compras fin 3
+
+[33mcommit 7ad221cb6957ca59571be4b6b8b0af988aeb9547[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 9 10:55:07 2023 -0400
+
+    proceso compras fin 2
+
+[33mcommit 0d945598fbb37527ebe6cb5aeaed5edf31225fe3[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 9 07:54:34 2023 -0400
+
+    proceso compras fin1,control de stock incluido
+
+[33mcommit 17d8b202854dc508b75a186347b9a5e21f9d4bc8[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Fri Jun 9 05:56:29 2023 -0400
+
+    nota compra crear,edit,del with livewire
+
+[33mcommit 8fd7e7f0dafa83247de758d28d0fdef9b7accc48[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Thu Jun 8 21:13:21 2023 -0400
+
+    crear nota compra with livewire
+
+[33mcommit ef420693de1858ef7e6f4e7b46fda17268a01dce[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Thu Jun 8 20:53:45 2023 -0400
+
+    hasta NotaCompra normal
+
+[33mcommit c1208bb7dfd5648798978ac8598aa9e563aa17d2[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Thu Jun 8 12:32:53 2023 -0400
+
+    crud proveedor
+
+[33mcommit acc8c14903aa611b5d358d966f4e4e407afc8ee5[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 7 19:45:44 2023 -0400
+
+    crud parabrisas completo
+
+[33mcommit 1b50f6d7b1b394329596ad7ce46bdad8a8a1ebb6[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 7 18:49:37 2023 -0400
+
+    parabrisa v1
+
+[33mcommit d6e0f5496c84aae0a995a35cc3e9a74a45aac757[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Wed Jun 7 13:20:27 2023 -0400
+
+    crud vehiculo,marca,posicion with livewire
+
+[33mcommit 7a2bbabd64d16f871fffeee389aefe9de0056001[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jun 6 15:22:56 2023 -0400
+
+    crud categoria y marcas y mejora de iconos
+
+[33mcommit fc8f88257b00ca1bd220e45dc3229d8efb4cb55b[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Tue Jun 6 12:42:33 2023 -0400
+
+    crud estado-pedido completo
+
+[33mcommit cf36037fb10bdcbac7c16f496935df76f4dc0eff[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun May 28 18:40:32 2023 -0400
+
+    crud roles,asignar rol a users y dar permisos y roles
+
+[33mcommit 1d4cd6bd64d08f714777da1ff5f53c6522d6ab21[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun May 28 12:25:12 2023 -0400
+
+    filtro de buscar user con serve y el paginate correcto
+
+[33mcommit facf19f192a4316c3afa4d7a665fd3b1250b5e89[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sun May 28 10:29:46 2023 -0400
+
+    Crud Roles y Permisos
+
+[33mcommit 763ac1adc158c5ac6516725689989c3e7ecc95b2[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sat May 27 22:50:48 2023 -0400
+
+    second commit roles y adminLTE
+
+[33mcommit 1f34f177add55a24f10841b8f2e7f08bab113e7c[m
+Author: Juan Pablo Rodriguez <pablojuan18sc35@gmail.com>
+Date:   Sat May 27 19:41:43 2023 -0400
+
+    first commit
