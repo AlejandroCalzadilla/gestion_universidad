@@ -86,8 +86,19 @@ class EstudianteController extends Controller
     public function show()
 
     {
-
+        //
+        $user = Auth::user();
+        $estudiante = $user->estudiante ?? null;
         
+        
+        return view('estudiante.show', compact('estudiante'));
+    }
+     
+    
+
+    public function perfil()
+
+    {
         //
         $user = Auth::user();
         $estudiante = $user->estudiante ?? null;
@@ -190,7 +201,7 @@ class EstudianteController extends Controller
         $bitacora->user_id = auth()->id();
         $bitacora->save();
 
-        return redirect()->route('estudiantes.index')->with('info', 'El estudiante se eliminó con éxito!');
+        return redirect()->route('estudiante.index')->with('info', 'El estudiante se eliminó con éxito!');
     }
    
 

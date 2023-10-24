@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Horario;
+use App\Models\Bitacora;
 class HorarioController extends Controller
 {
     //
@@ -35,7 +36,21 @@ class HorarioController extends Controller
     {
         //ya no se le  manda los demas atributos de prov,alma y parabri
         //porque se trabaja desde el componente livewire
-        return view('nota-compra.edit', ['horario' => $horario]);
+        return view('horarios.edit', ['horario' => $horario]);
     }
 
+    
+    public function destroy(Horario $horario)
+    {
+        $horario->delete();
+
+        $bitacora = new Bitacora();
+        $bitacora->accion = 'XXX ELIMINAR HORARIO';
+        $bitacora->fecha_hora = now();
+        $bitacora->fecha = now()->format('Y-m-d');
+        $bitacora->user_id = auth()->id();
+        $bitacora->save();
+
+        return redirect()->route('horarios.index')->with('info', 'El horario se eliminó con éxito!');
+    }
 }

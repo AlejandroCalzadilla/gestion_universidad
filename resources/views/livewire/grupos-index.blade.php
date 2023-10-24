@@ -33,14 +33,14 @@
                            
                             {{-- para que el boton quede pegado a la derecha->width=10px --}}
 
-                            @can('Editar almacen')
+                            @can('Editar grupos')
                             <td width="10px">
                                 <a class="btn btn-primary"" href="{{ route('grupos.edit', $grupo) }}"><i
                                         class="fas fa-user-edit"></i></a>
                             </td>
                            @endcan
                             
-                           @can('Eliminar almacen')
+                           @can('Eliminar grupos')
                            <td width="10px">
                                {{-- el form es necesario para cuando queremos eliminar por eso no pusimos la etiqueta <a href=""></a> --}}
                                <form action="{{ route('grupos.destroy', $grupo) }}" method="POST">

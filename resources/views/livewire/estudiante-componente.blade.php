@@ -20,7 +20,7 @@
             <input wire:keydown="limpiar_page" wire:model="buscar" class="form-control w-100"
                 placeholder="Escriba un nombre ..." type="text">
         </div> --}}
-        @can('Crear almacen')
+        @can('Crear  estudiantes')
             <div class="card-header">
                 <a class="btn btn-secondary" href="{{ route('estudiante.create') }}">NUEVO ESTUDIANTE</a>
             </div>

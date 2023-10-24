@@ -9,14 +9,14 @@
 
 @section('content_header')
 
-
-
-
 @stop
 
 
 
 @section('content')    
+
+
+
 @if ($estudiante)
 <h1>Información del Estudiante</h1>
 <p>Nombre: {{ $estudiante->nombre }}</p>
@@ -26,6 +26,9 @@
 <p>No se encontró información del estudiante.</p>
 @endif
    
+
+
+
 @stop
 
 @section('css')

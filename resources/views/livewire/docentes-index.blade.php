@@ -20,7 +20,7 @@
             <input wire:keydown="limpiar_page" wire:model="buscar" class="form-control w-100"
                 placeholder="Escriba un nombre ..." type="text">
         </div> --}}
-        @can('Crear almacen')
+        @can('Crear docentes')
             <div class="card-header">
                 <a class="btn btn-secondary" href="{{ route('docentes.create') }}">NUEVO DOCENTE</a>
             </div>
@@ -63,14 +63,14 @@
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
                                
-                                @can('Editar almacen')
+                                @can('Listar docentes')
                                     <td width="10px">
                                         <a class="btn btn-primary" href="{{ route('docentes.edit', $docente) }}"><i
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
 
-                                @can('Eliminar almacen')
+                                @can('Listar docentes')
                                     <td width="10px">
                                         {{-- el form es necesario para cuando queremos eliminar por eso no pusimos la etiqueta <a href=""></a> --}}
                                         <form action="{{ route('docentes.destroy', $docente) }}" method="POST">

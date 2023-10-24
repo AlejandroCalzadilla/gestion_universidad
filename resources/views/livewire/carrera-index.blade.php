@@ -58,13 +58,13 @@
 
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
-                                @can('Editar almacen')
+                                @can('Listar carreras')
                                     <td width="10px">
                                         <a class="btn btn-info"" href="{{ route('carreras.show', $carrera) }}"><i
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
-                                @can('Editar almacen')
+                                @can('Listar carreras')
                                     <td width="10px">
                                         <a class="btn btn-primary" href="{{ route('carreras.edit', $carrera) }}"><i
                                                 class="fas fa-user-edit"></i></a>
@@ -72,7 +72,7 @@
                                 @endcan
 
 
-                                @can('Eliminar almacen')
+                                @can('Listar carreras')
                                     <td width="10px">
                                         {{-- el form es necesario para cuando queremos eliminar por eso no pusimos la etiqueta <a href=""></a> --}}
                                         <form action="{{ route('carreras.destroy', $carrera) }}" method="POST">

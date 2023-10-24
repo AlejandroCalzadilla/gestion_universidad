@@ -45,7 +45,7 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'Listar estudiantes']);//18
         Permission::create(['name' => 'Ver estudiantes']);//19
         Permission::create(['name' => 'Editar estudiantes']);//20
-        Permission::create(['name' => 'Crear  estudinates']);//21
+        Permission::create(['name' => 'Crear  estudiantes']);//21
         Permission::create(['name' => 'Eliminar estudiantes']);//22
 
 

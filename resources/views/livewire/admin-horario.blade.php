@@ -61,10 +61,17 @@
 
                                 <td width="10px">
                                     <a class="btn btn-primary"
-                                        href="{{ route('admin.nota_compra.edit', $horario) }}">Edit</a>
+                                        href="{{ route('horarios.edit', $horario) }}">Edit</a>
                                 </td>
                                 <td width="10px">
-                                    <button class="btn btn-danger" type="button" onclick="confirmDelete({{ $horario->id }})">Del</button>
+                                    {{-- <button class="btn btn-danger" type="button" onclick="delete({{ $horario->id }})">Del</button> --}}
+                                    <form action="{{ route('horarios.destroy', $horario) }}" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-danger" type="submit"><i
+                                                class="fas fa-user-minus"></i></button>
+                                    </form>
+                                    
                                 </td>
                             </tr>
                         @endforeach

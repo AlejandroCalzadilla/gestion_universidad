@@ -8,38 +8,17 @@ use App\Models\Materia;
 use App\Models\Carrera;
 use App\Models\Bitacora;
 use App\Models\Horario;
-use App\Models\CarreraMateria;
+//use App\Models\CarreraMateria;
 class CreateHorario extends Component
 {
     public $cupos;
     public $horario;
-   // public $precio_unitario;
     public $materia_id;
-    //public $importe_total;
     public $carrera_id;
     public $docente_id;
-     public $materias;
-    public function updated($propertyName)
-    {
-        if ($propertyName == 'cantidad' || $propertyName == 'precio_unitario') {
-            $this->calculateTotal();
-        }
-    }
+    //public $materias;
 
-   //  public function calculateTotal()
-    //{
-     //   if (!empty($this->cantidad) && !empty($this->precio_unitario)) {
-      //      $this->importe_total = $this->cantidad * $this->precio_unitario;
-       // }
-   // }
-   public $materiasCarrera;
 
-   public function updatedCarreraId()
-   {
-       $this->materiasCarrera = CarreraMateria::where('carrera_id', $this->carrera_id)->pluck('materia_id');
-   }
-   
-    
 
     public function save()
     {
@@ -80,18 +59,13 @@ class CreateHorario extends Component
     }
 
    
-
-
     public function render()
     {
         return view('livewire.create-horario',[
         'docentes' => Docente::all(),
         'materias' => Materia::all(),
         'carreras' => Carrera::all(), 
-        //'materias' =>Materia::whereIn('id', $this->carrera->materias->pluck('id'))->get(),
-         
-        ]
-        
-        );
+             
+        ]);
     }
 }

@@ -403,20 +403,20 @@ return [
                 ],
                 [
                     'text' => 'Admin-Estudiante',
-                  //  'route'  => 'estudiante.index',
+                    'route'  => 'estudiante.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     'can' => 'Listar estudiantes',
                 ],
-
+                  
                 [
                     'text' => 'Perfil',
-                    'route'  => 'estudiante.show',
+                    'route'  => 'estudiante.perfil',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
                     //'can' => 'Ver estudiantes',
                 ],
-               
+                
                 [
                     'text' => 'Admin-Materias',
                     'route'  => 'materias.index',
