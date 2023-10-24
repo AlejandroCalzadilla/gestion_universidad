@@ -71,8 +71,8 @@
                                
                                  @can('Editar estudiantes')
                                     <td width="10px">
-                                        <a class="btn btn-primary" href="{{ route('estudiante.edit', $estudiantes) }}"><i
-                                                class="fas fa-user-edit"></i></a>
+                                        <a class="btn btn-primary" href="{{ route('estudiante.edit', $estudiantes) }}">
+                                            <i class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
 

@@ -84,9 +84,7 @@ class EstudianteController extends Controller
      */
    // public $estudiante;
     public function show()
-
     {
-        //
         $user = Auth::user();
         $estudiante = $user->estudiante ?? null;
         
