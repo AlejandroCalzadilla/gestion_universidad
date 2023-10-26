@@ -9,6 +9,19 @@ use App\Models\Materia;
 use Illuminate\Validation\Rule;
 class GrupoController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar grupos')->only('index');
+        $this->middleware('can:Editar grupos')->only('edit', 'update');
+        $this->middleware('can:Crear grupos')->only('create', 'store');
+        $this->middleware('can:Eliminar grupos')->only('destroy');
+    }
+
+
+
+
+
     public function index()
     {
 
@@ -50,7 +63,7 @@ class GrupoController extends Controller
         $bitacora->save();
         // Código adicional o redireccionamiento después de guardar el cliente
  
-        return redirect()->route('grupos.index')->with('info', 'Grupo creada exitosamente.');
+        return redirect()->route('grupos.index')->with('info', 'Grupo creado exitosamente.');
     }
  
     /**
@@ -71,45 +84,41 @@ class GrupoController extends Controller
      */
     public function update(Request $request,Grupo $grupo)
     {
-        $request->validate([
-          
-            'sigla' => 'required',
+        $request->validate([      
             'nombre' => 'required',
              
         ]);
  
          $grupo->update([
-         
             'nombre' => $request->nombre,
             
         ]);
  
         $bitacora = new Bitacora();
-        $bitacora->accion = '***ACTUALIZAR MATERIA';
+        $bitacora->accion = '***ACTUALIZAR GRUPO';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
         $bitacora->save();
  
         // Código adicional o redireccionamiento después de actualizar el cliente
- 
-        return redirect()->route('materias.index')->with('info', 'Carrera actualizada exitosamente.');
+        return redirect()->route('grupos.index')->with('info', 'Carrera actualizada exitosamente.');
     }
  
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Materia $materia)
+    public function destroy(Grupo $grupo)
     {
-        $materia->delete();
+        $grupo->delete();
  
         $bitacora = new Bitacora();
-        $bitacora->accion = 'XXX ELIMINAR MATERIA';
+        $bitacora->accion = 'XXX ELIMINAR GRUPO';
         $bitacora->fecha_hora = now();
         $bitacora->fecha = now()->format('Y-m-d');
         $bitacora->user_id = auth()->id();
         $bitacora->save();
  
-        return redirect()->route('materias.index')->with('info', 'el grupo se eliminó con éxito!');
+        return redirect()->route('grupos.index')->with('info', 'grupo eliminado exitosamente.');
     }
 }

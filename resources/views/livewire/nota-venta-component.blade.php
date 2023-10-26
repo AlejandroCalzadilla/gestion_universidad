@@ -89,11 +89,11 @@
     {{-- Tablas --}}
     <div class="card">
 
-        @can('Crear ventas')
+        {{-- @can('Crear ventas')
             <div class="card-header">
                 <a class="btn btn-info" href="{{ route('nota_venta.create') }}">NUEVA VENTA</a>
             </div>
-        @endcan
+        @endcan --}}
 
         @if ($nota_ventas->count())
             <div class="card-body">
@@ -144,20 +144,21 @@
                                 </td>
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
-                                @can('Actualizar ventas')
+                                {{-- @can('Actualizar ventas')
                                     <td width="10px">
                                         <a class="btn btn-primary"
                                             href="{{ route('nota_venta.edit', $nota_venta->id) }}"><i
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
-                                @endcan
+                                @endcan --}}
+{{--                                 
                                 @can('Eliminar ventas')
                                     <td width="10px">
                                         <button class="btn btn-danger" type="button"
                                             onclick="confirmDelete({{ $nota_venta->id }})"><i
                                                 class="fas fa-user-minus"></i></button>
                                     </td>
-                                @endcan
+                                @endcan --}}
                             </tr>
                         @endforeach
                     </tbody>

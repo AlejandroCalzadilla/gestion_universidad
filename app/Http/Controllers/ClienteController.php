@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
+
+
+    /*
     public function __construct()
     {
         $this->middleware('can:Listar cliente')->only('index');
@@ -15,6 +18,7 @@ class ClienteController extends Controller
         $this->middleware('can:Crear cliente')->only('create', 'store');
         $this->middleware('can:Eliminar cliente')->only('destroy');
     }
+    */
     public function index()
     {
         return view('cliente.index');

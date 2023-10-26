@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 use PDF;
 
 class AlmacenController extends Controller
-{
+{ 
+
+
+    /*
     public function __construct()
     {
         $this->middleware('can:Listar almacen')->only('index');
@@ -16,6 +19,7 @@ class AlmacenController extends Controller
         $this->middleware('can:Crear almacen')->only('create', 'store');
         $this->middleware('can:Eliminar almacen')->only('destroy');
     }
+    */
     public function index()
     {
         return view('almacen.index');

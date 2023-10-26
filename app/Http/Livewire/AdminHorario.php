@@ -97,25 +97,9 @@ class AdminHorario extends Component
         $this->carreras = Carrera::all();
     }
 
-    public function deleteCompra($horario_id)
+    public function delete($horario_id)
     {
-       /*  $compra = NotaCompra::find($nota_compra_id);
-
-        // Buscar el Almacén y Parabrisa asociados con la NotaCompra
-        $almacen = Almacen::find($compra->almacen_id);
-        $parabrisa = $almacen->parabrisas()->where('parabrisas.id', $compra->parabrisa_id)->first();
-
-        if ($parabrisa) {
-            // Si el Parabrisa está asociado con el Almacén, resta la cantidad de la NotaCompra del stock
-            $stockActual = $parabrisa->pivot->stock;
-            $nuevoStock = $stockActual - $compra->cantidad;
-            if ($nuevoStock >= 0) { // Evita tener stock negativo
-                $almacen->parabrisas()->updateExistingPivot($parabrisa->id, ['stock' => $nuevoStock]);
-            } else {
-                return back()->with('error', 'No se puede eliminar la Nota de Compra. El stock resultante sería negativo.');
-            }
-        }
-        */  
+     
         // Ahora puedes eliminar la NotaCompra
         $horario= Horario::find($horario_id);
         $horario->delete();

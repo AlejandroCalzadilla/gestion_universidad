@@ -339,7 +339,7 @@ return [
         [
             'text'    => 'Administrar Academica',
             'icon'    => 'fas fa-fw fa-users',
-            'can' => 'Administrar usuarios',
+            'can' => 'administracion academica',
             
             'submenu' => [
                  
@@ -391,7 +391,7 @@ return [
         [
             'text'    => 'Gestion Academica',
             'icon'    => 'fas fa-fw fa-users',
-            'can' => 'Administrar usuarios',
+            'can' => 'gestion academica',
              'active'=>true,
             'submenu' => [
                 [
@@ -399,22 +399,37 @@ return [
                     'route'  => 'docentes.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
-                    //'can' => 'Listar bitacora',
+                    'can' => 'Listar docentes',
                 ],
                 [
                     'text' => 'Admin-Estudiante',
                     'route'  => 'estudiante.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
-                    //'can' => 'Listar bitacora',
+                    'can' => 'Listar estudiantes',
                 ],
-               
+                  
+                [
+                    'text' => 'Perfil',
+                    'route'  => 'estudiante.perfil',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Ver estudiantes',
+                ],
+                [
+                    'text' => 'PerfilD',
+                    'route'  => 'docente.perfil',
+                    'icon'    => 'fas fa-fw fa-user',
+                    //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
+                    //'can' => 'Ver estudiantes',
+                ],
+                
                 [
                     'text' => 'Admin-Materias',
                     'route'  => 'materias.index',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
-                    //'can' => 'Listar bitacora',
+                    'can' => 'Listar materias',
                 ],
                /*[
                     'text' => 'NotasD',
@@ -469,11 +484,11 @@ return [
 
             ],
         ], */
-         
+       /*  
         [
             'text'    => 'Administrar compras',
             'icon'    => 'fas fa-fw fa-tags',
-            'can' => 'Administrar compras',
+            //'can' => 'Administrar compras',
             'submenu' => [
 
                 [
@@ -481,27 +496,27 @@ return [
                     'icon'    => 'fas fa-fw fa-file-invoice',
                     'route'  => 'admin.nota_compra.index',
                     'active' => ['nota_compra*'], //extra para los botones sidevar relacionados
-                    'can' => 'Listar compras',
+                   // 'can' => 'Listar compras',
                 ],
                 [
                     'text' => 'Almacen',
                     'icon'    => 'fas fa-fw fa-cube',
                     'route'  => 'admin.almacen.index',
                     'active' => ['almacen*'], //extra para los botones sidevar relacionados
-                    'can' => 'Listar almacen',
+                    //'can' => 'Listar almacen',
                 ],
                 [
                     'text' => 'Proveedor',
                     'icon'    => 'fas fa-fw fa-cogs',
                     'route'  => 'admin.proveedor.index',
                     'active' => ['proveedor*'], //extra para los botones sidevar relacionados
-                    'can' => 'Listar proveedor',
+                    //'can' => 'Listar proveedor',
                 ],
 
 
             ],
         ],
-
+         */
         /*
          [
             'text'    => 'Administrar Inventario',
@@ -550,7 +565,7 @@ return [
         [
             'text'    => 'Inscripciones',
             'icon'    => 'fas fa-fw fa-calendar',
-            'can' => 'Administrar inventario',
+            'can' => 'inscripcion',
             'submenu' => [
                 [
                     'text' => 'Admin-Grupos',

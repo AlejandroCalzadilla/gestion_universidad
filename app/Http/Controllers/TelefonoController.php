@@ -9,13 +9,16 @@ use Illuminate\Http\Request;
 
 class TelefonoController extends Controller
 {
+
+
+    /*
     public function __construct()
     {
         $this->middleware('can:Listar telefono')->only('index');
         $this->middleware('can:Editar telefono')->only('edit', 'update');
         $this->middleware('can:Crear telefono')->only('create', 'store');
         $this->middleware('can:Eliminar telefono')->only('destroy');
-    }
+    }*/
     public function index()
     {
         return view('telefono.index');

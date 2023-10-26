@@ -4,25 +4,7 @@
             <div class="row">
                 <div class="col-md-6">
                    
-{{-- 
-                    <div class="form-group">
-                        <label for="horario">Horario </label>
-                        <input type="text" class="form-control @error('horario') is-invalid @enderror" placeholder=" el texto  puede ser válido en los siguientes formatos:
 
-                        [Día de la semana] [Hora de inicio]-[Hora de finalización]
-                        [Día de la semana] [Hora de inicio]-[Hora de finalización] [Número de teléfono]-[modulo-aula]
-                         ejemplos Lu 18:15-19:45
-                         Lu 18:15-19:45 236-32
-                         Lu 18:15-19:45 236-32 |Mi 18:15-19:45 236-41
-                         nota si debe escribir con espacios 
-                        "
-                         wire:model="hoario">
-                        @error('horario')
-                            <span class="invalid-feedback">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div> --}}
                        
 
                     <div class="form-group">
@@ -71,39 +53,29 @@
                         @enderror
                     </div> 
 
-                      <div class="form-group">
+
+
+                    <div class="form-group">
                         <label for="materia_id">Materia: </label>
                         <select class="form-control @error('materia_id') is-invalid @enderror" wire:model="materia_id">
                             <option value="">Seleccione un materia...</option>
-                            @foreach($carrera->materias as $materia)
-                                <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
+                            @if ($materias != null)
+                            @foreach  ($materias as $materia)
+                            <option value="{{ $materia->id }}">{{ $materia->sigla}}</option>
                             @endforeach
+                            @else
+                            
+                             @endif
                         </select>
                         @error('materia_id')
                             <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                    </div> 
-                  
+                    </div>   
+                   
 
-                    {{-- <div class="form-group">
-                        <label for="materia_id">Materia:</label>
-                        <select class="form-control @error('materia_id') is-invalid @enderror" wire:model="materia_id">
-                            <option value="">Seleccione una materia...</option>
-                            @foreach($materias as $materia)
-                                @if(in_array($materia->id, $materiasCarrera))
-                                    <option value="{{ $materia->id }}">{{ $materia->nombre }}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                        @error('materia_id')
-                            <span class="invalid-feedback">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        </div>
-                        @enderror
-                    </div> --}}
+                  
                   
  
 

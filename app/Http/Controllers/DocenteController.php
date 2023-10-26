@@ -2,14 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Docente;
 use App\Models\Bitacora;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class DocenteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar docentes')->only('index');
+        $this->middleware('can:Editar docentes')->only('edit', 'update');
+        $this->middleware('can:Crear docentes')->only('create', 'store');
+        $this->middleware('can:Eliminar docentes')->only('destroy');
+        $this->middleware('can:Ver estudiantes')->only('show');
+    }
+
+
     //
     public function index()
     {
@@ -67,10 +80,18 @@ class DocenteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Docente $docente)
-
+    public function show()
     {
-        //
+        $user = Auth::user();
+        $docentes = $user->docentes ?? null;
+        return view('docentes.show', compact('docentes'));
+    }
+
+    public function perfil()
+    {
+        $user = Auth::user();
+        $docentes = $user->docentes ?? null;
+        return view('docentes.show', compact('docentes'));
     }
 
     /**
@@ -94,8 +115,7 @@ class DocenteController extends Controller
             'paterno' => 'required',
             'edad' => 'required',
             'sexo' => 'required',
-            'descripcionT' => 'required',
-            
+            'descripcionT' => 'required',   
             'email'=>'required',
             'user_id' => 'nullable|exists:users,id|unique:docentes,user_id,' . $docente->id  
    
@@ -118,7 +138,7 @@ class DocenteController extends Controller
                 $docente->save();
             }
         }
-
+        $docente->update($request->except('user_id'));
 
        /*
          $docente->update([

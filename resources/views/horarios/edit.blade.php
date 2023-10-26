@@ -7,7 +7,7 @@
 @stop
 
 @section('content')    
-    @livewire('admin-horario')
+    @livewire('edithorario', ['horario' => $horario])
 @stop
 
 @section('css')

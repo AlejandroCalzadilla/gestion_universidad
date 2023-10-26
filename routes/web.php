@@ -27,6 +27,8 @@ use App\Http\Controllers\GrupoController;
 use App\Models\Carrera;
 use App\Models\Estudiante;
 use App\Http\Controllers\HorarioController;
+use App\Models\Docente;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +60,21 @@ Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('docentes',DocenteController::class);
 Route::resource('materias',MateriaController::class);
 Route::resource('carreras',CarrreraController::class);
+
+
 Route::resource('estudiante',EstudianteController::class);
+Route::get('estudiantes', [EstudianteController::class, 'perfil'])->name('estudiante.perfil');
+Route::get('docente', [DocenteController::class, 'perfil'])->name('docente.perfil');
+
+/*Route::get('estudiante', [EstudianteController::class, 'index'])->name('estudiante.index');
+Route::get('estudiante/create', [EstudianteController::class, 'create'])->name('estudiante.create');
+Route::post('estudiante', [EstudianteController::class, 'store'])->name('estudiante.store');
+
+Route::get('estudiante/{estudiante}/edit', [EstudianteController::class, 'edit'])->name('estudiante.edit');
+Route::put('estudiante/{estudiante}', [EstudianteController::class, 'update'])->name('admin.estudiante.update');
+Route::delete('estudiante/{estudiante}', [EstudianteController::class, 'destroy'])->name('estudiante.destroy');
+*/
+
 Route::resource('grupos',GrupoController::class);
 Route::resource('horarios',HorarioController::class);
 

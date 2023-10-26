@@ -8,6 +8,16 @@ use App\Models\Bitacora;
 class MateriaController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('can:Listar materias')->only('index');
+        $this->middleware('can:Editar materias')->only('edit', 'update');
+        $this->middleware('can:Crear materias')->only('create', 'store');
+        $this->middleware('can:Eliminar materias')->only('destroy');
+    }
+   
+
+
     public function index()
     {
         return view('materias.index');

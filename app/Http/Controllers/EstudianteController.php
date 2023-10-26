@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Bitacora;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class EstudianteController extends Controller
 {
    
+
+    public function __construct()
+    {
+        $this->middleware('can:Listar estudiantes')->only('index');
+        $this->middleware('can:Ver estudiantes')->only('show');
+        $this->middleware('can:Editar estudiantes')->only('edit', 'update');
+        $this->middleware('can:Crear  estudiantes')->only('create', 'store');
+        $this->middleware('can:Eliminar estudiantes')->only('destroy');
+    }
+
 
     public function index()
     {
@@ -52,10 +63,7 @@ class EstudianteController extends Controller
         $estudiante = new Estudiante($validatedData);
         $estudiante->save();
 
-       
-
-
-      
+    
 
         $bitacora = new Bitacora();
         $bitacora->accion = '+++CREAR ESTUDIANTE';
@@ -71,10 +79,27 @@ class EstudianteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Estudiante $estudiante)
+   // public $estudiante;
+    public function show()
+    {
+        $user = Auth::user();
+        $estudiante = $user->estudiante ?? null;
+        
+        return view('estudiante.show', compact('estudiante'));
+    }
+     
+    
+
+    public function perfil()
 
     {
-        //
+        //usuario logueado
+        $user = Auth::user();
+        //este usario esta relacionado con un estudiante  si no devolver null
+        $estudiante = $user->estudiante ?? null;
+        
+        
+        return view('estudiante.show', compact('estudiante'));
     }
 
     /**
@@ -140,7 +165,7 @@ class EstudianteController extends Controller
         }
       
 
-
+        $estudiante->update($request->except('user_id'));
 
 
 
@@ -171,7 +196,7 @@ class EstudianteController extends Controller
         $bitacora->user_id = auth()->id();
         $bitacora->save();
 
-        return redirect()->route('estudiantes.index')->with('info', 'El estudiante se eliminó con éxito!');
+        return redirect()->route('estudiante.index')->with('info', 'El estudiante se eliminó con éxito!');
     }
    
 

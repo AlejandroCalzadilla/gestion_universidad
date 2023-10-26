@@ -8,12 +8,16 @@ use PDF;
 
 class NotaVentaController extends Controller
 {
+
+
+    /* 
     public function __construct()
     {
         $this->middleware('can:Listar ventas')->only('index');
         $this->middleware('can:Actualizar ventas')->only('edit');
         $this->middleware('can:Crear ventas')->only('create');
     }
+    */
     public function index()
     {
         return view('nota-venta.index');

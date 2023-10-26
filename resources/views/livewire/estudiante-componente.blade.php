@@ -20,7 +20,7 @@
             <input wire:keydown="limpiar_page" wire:model="buscar" class="form-control w-100"
                 placeholder="Escriba un nombre ..." type="text">
         </div> --}}
-        @can('Crear almacen')
+        @can('Crear  estudiantes')
             <div class="card-header">
                 <a class="btn btn-secondary" href="{{ route('estudiante.create') }}">NUEVO ESTUDIANTE</a>
             </div>
@@ -69,14 +69,14 @@
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
                                
-                                 @can('Editar almacen')
+                                 @can('Editar estudiantes')
                                     <td width="10px">
-                                        <a class="btn btn-primary" href="{{ route('estudiante.edit', $estudiantes) }}"><i
-                                                class="fas fa-user-edit"></i></a>
+                                        <a class="btn btn-primary" href="{{ route('estudiante.edit', $estudiantes) }}">
+                                            <i class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
 
-                                @can('Eliminar almacen')
+                                @can('Eliminar estudiantes')
                                     <td width="10px">
                                         <!-el form es necesario para cuando queremos eliminar por eso no pusimos
                                         la etiqueta --> 

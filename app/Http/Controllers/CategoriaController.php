@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
 
+    
+     /*
     public function __construct()
     {
         $this->middleware('can:Listar categoria')->only('index');
@@ -16,6 +18,7 @@ class CategoriaController extends Controller
         $this->middleware('can:Crear categoria')->only('create', 'store');
         $this->middleware('can:Eliminar categoria')->only('destroy');
     }
+    */
     public function index()
     {
         $categorias = Categoria::all();

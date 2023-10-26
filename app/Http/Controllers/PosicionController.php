@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class PosicionController extends Controller
 {
-
+   /*
     public function __construct()
     {
         $this->middleware('can:Listar posicion')->only('index');
         $this->middleware('can:Editar posicion')->only('edit', 'update');
         $this->middleware('can:Crear posicion')->only('create', 'store');
         $this->middleware('can:Eliminar posicion')->only('destroy');
-    }
+    }*/
 
     public function index()
     {

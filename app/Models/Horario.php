@@ -40,4 +40,6 @@ class Horario extends Model
     {
         return $this->belongsTo(Carrera::class);
     }
+
+   
 }

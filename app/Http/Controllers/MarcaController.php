@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
-
+   /*
     public function __construct()
     {
         $this->middleware('can:Listar marca')->only('index');
@@ -16,7 +16,7 @@ class MarcaController extends Controller
         $this->middleware('can:Crear marca')->only('create', 'store');
         $this->middleware('can:Eliminar marca')->only('destroy');
     }
-
+    */
     public function index()
     {
         $marcas = Marca::all();

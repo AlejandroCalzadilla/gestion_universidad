@@ -11,11 +11,13 @@
             <input wire:keydown="limpiar_page" wire:model="buscar" class="form-control w-100"
                 placeholder="Escriba un nombre ..." type="text">
         </div> --}}
-        @can('Crear almacen')
+       
+       
+        {{-- @can('Crear almacen')
             <div class="card-header">
                 <a class="btn btn-secondary" href="{{ route('admin.almacen.create') }}">NUEVO ALMACEN</a>
             </div>
-        @endcan
+        @endcan --}}
 
         @if ($almacens->count())
             <div class="card-body">
@@ -59,12 +61,12 @@
                                     </a>
                                 </td>
 
-                                @can('Editar almacen')
+                                {{-- @can('Editar almacen')
                                     <td width="10px">
                                         <a class="btn btn-primary" href="{{ route('admin.almacen.edit', $almacen) }}"><i
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
-                                @endcan
+                                @endcan --}}
 
                                 @can('Eliminar almacen')
                                     <td width="10px">
