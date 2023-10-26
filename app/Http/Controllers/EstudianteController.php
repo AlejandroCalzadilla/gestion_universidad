@@ -24,7 +24,7 @@ class EstudianteController extends Controller
     public function create()
     { 
 
-        $users = User::whereDoesntHave('docente')->get(); 
+        $users = User::whereDoesntHave('estudiante')->get(); 
         return view('estudiante.create',['users' => $users]);
     }
 
