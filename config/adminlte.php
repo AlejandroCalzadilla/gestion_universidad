@@ -414,7 +414,7 @@ return [
                     'route'  => 'estudiante.perfil',
                     'icon'    => 'fas fa-fw fa-user',
                     //'active' => ['bitacora*'], //extra para los botones sidevar relacionados
-                    //'can' => 'Ver estudiantes',
+                    'can' => 'Ver perfile',
                 ],
                 [
                     'text' => 'PerfilD',

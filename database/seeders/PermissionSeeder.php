@@ -55,7 +55,7 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'Eliminar carreras']);//26
 
         Permission::create(['name' => 'Listar materias']);//27
-        Permission::create(['name' => 'Editar materias']);//38
+        Permission::create(['name' => 'Editar materias']);//28
         Permission::create(['name' => 'Crear materias']);//29
         Permission::create(['name' => 'Eliminar materias']);//30
        
@@ -70,7 +70,10 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'Eliminar horarios']);//38
 
 
+        Permission::create(['name' => 'ver perfile']);//39
 
+
+ 
 
 
 

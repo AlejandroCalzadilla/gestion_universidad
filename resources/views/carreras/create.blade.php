@@ -38,7 +38,22 @@
                         </span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    {!! Form::label('tipo', 'Tipo: ') !!}
+                    {!! Form::select('tipo', ['Semestral' => 'Semestral', 'Anual' => 'Anual','Mensual' => 'Mensual'], null, [
+                        'class' => 'form-control' . ($errors->has('tipo') ? ' is-invalid' : ''),
+                        'placeholder' => 'Seleccione el tipo ...',
+                    ]) !!}
+                    @error('tipo')
+                        <span class="invalid-feedback">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
             </div>
+            
         </div>
 
       

@@ -1,34 +1,39 @@
-@extends('adminlte::page')
-
-@section('title', 'Carreras')
-
-@section('content_header')
-    <h1>Carrera</h1>
-    <h2>{{ $carrera->nombre }}</h2>
-@stop
-
-@section('content')    
-
-
-<div class="card">
-  
-
-   
-    @can('Crear carreras')
-    <div class="card-header ">            
-     <a class="btn bg-gradient-primary" href="{{ route('carrera.generarpdf',$carrera) }}">generarpdf</a> 
-    </div>
-  
-        @endcan
-     
-  
-    {{-- <ul>
-        @foreach ($carrera->materias as $materia)
-            <li>{{ $materia->nombre }} (Semestre: {{ $materia->pivot->semestre }}, Crédito: {{ $materia->pivot->credito }})</li>
-        @endforeach
-    </ul> --}}
-    <h2>Materias</h2>
-    @if ($carrera->count())
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malla {{$carreras->nombre}}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(odd) {
+            background-color:rgb(0,125,255);
+        }
+    </style>
+</head>
+<body>
+    <h2>Malla {{$carreras->nombre}}</h2>
+    @if ($carreras->count())
             <div class="card-body">
                 <table class="table table-striped">
                     <thead class="bg-primary">
@@ -40,7 +45,7 @@
                             <th>semestre</th>
                             <th>creditos</th>
 
-                            <th></th>
+                           
                           
                             
                         </tr>
@@ -60,6 +65,7 @@
                                 <td>
                                     {{ $materia->credito }}
                                 </td>
+                                
                                
 
                             </tr>
@@ -72,15 +78,5 @@
                     <strong>No hay registros ...</strong>
                 </div>
             @endif
-        
- 
-</div>
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-    <script> console.log('Hi!'); </script>
-@stop
+</body>
+</html>

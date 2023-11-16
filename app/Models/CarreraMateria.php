@@ -16,4 +16,12 @@ class CarreraMateria extends Model
          
         // otras propiedades aquí
     ];
+
+    public function prerequisitos()
+    {
+        return $this->belongsToMany(CarreraMateria::class, 'prerequisitos', 'materia_id', 'prerequisito_id');
+    }
+
+
+
 }

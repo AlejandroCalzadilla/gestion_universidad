@@ -12,16 +12,16 @@ class Carrera extends Model
      
     protected $fillable = [
         'nombre',
-         'facultad'
+         'facultad',
+         'tipo'
         // otras propiedades aquí
     ];
 
 
 
-    public function materias()
+    public function materia()
     {
-        return $this->belongsToMany(Materia::class, 'carrera_materias', 'carrera_id', 'materia_id')
-        ->withPivot('id','semestre', 'credito');
+        return $this->hasMany(Materia::class);
     }
 
 

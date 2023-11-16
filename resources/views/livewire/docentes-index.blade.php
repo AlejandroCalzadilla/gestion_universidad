@@ -29,7 +29,7 @@
         @if ($docentes->count())
             <div class="card-body">
                 <table class="table table-striped">
-                    <thead>
+                    <thead class="bg-primary">
                         <tr>
 
                             {{-- en descripcion ira vehiculo con marca --}}

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Materia;
 use App\Models\Bitacora;
+use App\Models\Carrera;
+
 class MateriaController extends Controller
 {
     //
@@ -28,7 +30,8 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        return view('materias.create');
+        $carreras=Carrera::all();
+        return view('materias.create',compact('carreras'));
     }
  
     /**
@@ -36,15 +39,24 @@ class MateriaController extends Controller
      */
     public function store(Request $request)
     {
+
+         //dd($request) ;  
         $request->validate([          
             'sigla' => 'required',
             'nombre' => 'required',
+            'semestre'=> 'required',
+            'credito'=> 'required',
+            'carrera_id'=> 'required',
+            
         ]);
- 
+          
         Materia::create([
           
             'sigla' => $request->sigla,
             'nombre' => $request->nombre,
+            'semestre'=> $request->semestre,
+            'credito'=> $request->credito,
+            'carrera_id'=> $request->carrera_id,
            
         ]);
  
@@ -65,7 +77,9 @@ class MateriaController extends Controller
     public function show(Materia $materia)
  
     {
-        //
+        $pres = Materia::where('id', '<>', $materia->id)->where('carrera_id', '=', $materia->carrera_id) ->get();
+        //dd($pres);
+        return view('materias.show',compact('materia','pres'));;
     }
  
     /**
@@ -73,7 +87,8 @@ class MateriaController extends Controller
      */
     public function edit(Materia $materia)
     {
-        return view('materias.edit', compact('materia'));
+         $carreras=Carrera::all(); 
+        return view('materias.edit', compact('materia','carreras'));
     }
  
     /**
@@ -81,10 +96,15 @@ class MateriaController extends Controller
      */
     public function update(Request $request,Materia $materia)
     {
+
+        //dd($request);
         $request->validate([
           
             'sigla' => 'required',
             'nombre' => 'required',
+            'semestre'=> 'required',
+            'credito'=> 'required',
+            'carrera_id'=> 'required',
              
         ]);
  
@@ -92,6 +112,9 @@ class MateriaController extends Controller
          
             'sigla' => $request->sigla,
             'nombre' => $request->nombre,
+            'semestre'=> $request->semestre,
+            'credito'=> $request->credito,
+            'carrera_id'=> $request->carrera_id,
             
         ]);
  
@@ -112,6 +135,8 @@ class MateriaController extends Controller
      */
     public function destroy(Materia $materia)
     {
+        
+ 
         $materia->delete();
  
         $bitacora = new Bitacora();

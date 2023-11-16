@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Carrera;
 use App\Models\Bitacora;
-
+use App\Models\Materia;
+use Illuminate\Support\Facades\DB;
+use PDF;
 class CarrreraController extends Controller
 {
     //
@@ -44,17 +46,24 @@ class CarrreraController extends Controller
     */
    public function store(Request $request)
    {
-       $request->validate([          
+       //dd($request->tipo,$request->nombre);
+
+       $validatedData= $request->validate([          
            'nombre' => 'required',
            'facultad' => 'required',
+           'tipo'    => 'required',
        ]);
-
-       Carrera::create([
-         
+       //dd($request->tipo);
+       $carrera = new Carrera($validatedData);
+        $carrera->save(); 
+       
+       /*
+       Carrera::create([  
            'nombre' => $request->nombre,
-           'facultad' => $request->facultad,
+           'facultad' => $request->facultad,  
+           'tipo' => $request->tipo,
           
-       ]);
+       ]);*/
 
        $bitacora = new Bitacora();
        $bitacora->accion = '+++CREAR CARRERA';
@@ -74,8 +83,30 @@ class CarrreraController extends Controller
 
    {
        //
-       return view('carreras.show', compact('carrera'));
+        $id=$carrera->id;
+       $materias = Materia::where('carrera_id', '=',$id)->get();
+       //dd();
+       return view('carreras.show', compact('carrera','materias'));
    }
+
+
+   public function generarPDF($carrera)
+   {
+       $carreras = Carrera::find($carrera);
+       $materias=$carreras->materia;
+       $materias = $materias->sortBy('semestre');
+       
+        
+       //interpretacion del loadview
+       /*Con referencia a view, la vista pdf que esta dentro de la carpeta almacen*/
+       $pdf = PDF::loadView('carreras.pdf', compact('carreras','materias'));
+
+         $filename = 'carrera_' . $carreras->nombre . '_' . $carreras->id . '.pdf';
+       //$filename = 'venta_' . $nota_venta->id . '.pdf';
+       return $pdf->download($filename);
+   }
+
+
 
    /**
     * Show the form for editing the specified resource.
@@ -95,6 +126,7 @@ class CarrreraController extends Controller
          
            'nombre' => 'required',
            'facultad' => 'required',
+           'tipo' => 'required',
             
        ]);
 
@@ -102,6 +134,7 @@ class CarrreraController extends Controller
         
            'nombre' => $request->nombre,
            'facultad' => $request->facultad,
+           'tipo' => $request->tipo,
            
        ]);
 
@@ -133,6 +166,8 @@ class CarrreraController extends Controller
 
        return redirect()->route('carreras.index')->with('info', 'La Carrera se eliminó con éxito!');
    }
+
+   
 
 
 }

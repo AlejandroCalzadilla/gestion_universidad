@@ -39,7 +39,42 @@
                 </span>
             @enderror
         </div>
+        <div class="form-group">
+            {!! Form::label('semestre', 'Semestre: ') !!}
+            {!! Form::text('semestre', null, [
+                'class' => 'form-control' . ($errors->has('semestre') ? ' is-invalid' : ''),
+                'placeholder' => 'Escriba el carnet de identidad...',
+            ]) !!}
+            @error('semestre')
+                <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form-group">
+            {!! Form::label('credito', 'Credito: ') !!}
+            {!! Form::text('credito', null, [
+                'class' => 'form-control' . ($errors->has('semestre') ? ' is-invalid' : ''),
+                'placeholder' => 'Escriba el carnet de identidad...',
+            ]) !!}
+            @error('semestre')
+                <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+       
 
+        <div class="form-group">
+            <label for="carrera_id">Materia</label>
+            <select name="carrera_id"  class="form-control"> 
+                {{--asi se recupera la info de una llave foranea  ---}}
+                <option value="{{$materia->carrera->id}}">{{$materia->carrera->nombre}}</option> 
+                @foreach ($carreras as $carrera)
+                    <option value="{{ $carrera->id }}">{{ $carrera->nombre }}</option>
+                @endforeach
+            </select>
+        </div> 
         
         {!! Form::submit('Actualizar materia', ['class' => 'btn btn-primary mt-2']) !!}
 

@@ -13,15 +13,18 @@ class Materia extends Model
     protected $fillable = [
         'sigla',
         'nombre',
+        'semestre',
+        'credito',
+        'materia_id',
          
         // otras propiedades aquí
     ];
 
-    public function carreras()
+    public function carrera()
     {
-       return $this->belongsToMany(Carrera::class, 'carrera_materias', 'carrera_id', 'materia_id')
-                    ->withPivot('id','semestre', 'credito');  
+        return $this->belongsTo(Carrera::class);
     }
+    
 
     public function grupos()
     {
@@ -32,6 +35,11 @@ class Materia extends Model
     {
         return $this->hasMany(Horario::class);
     }
-
+    
+    public function prerequisitos()
+    {
+        return $this->belongsToMany(Materia::class, 'prerequisitos', 'materia_id', 'prerequisito_id');
+    }
+   
 
 }

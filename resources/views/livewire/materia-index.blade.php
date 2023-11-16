@@ -67,6 +67,18 @@
                                                 class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
+                                   
+
+
+                                @can('Editar materias')
+                                    <td width="10px">
+                                        <a class="btn btn-info" href="{{ route('materias.show', $materia) }}"><i
+                                                class="fas fa-user-edit"></i></a>
+                                    </td>
+                                @endcan
+
+
+
 
                                 @can('Eliminar materias')
                                     <td width="10px">

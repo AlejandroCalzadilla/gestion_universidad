@@ -18,7 +18,7 @@ class RoleSeeder extends Seeder
          
         
         $role = Role::create(['name' => 'estudiante']);
-        $role->permissions()->sync([1,12,13]);
+        $role->permissions()->sync([1,12,13,39]);
         $role = Role::create(['name' => 'docente']);
         $role->permissions()->sync([1,12,13]);
         //Otra forma de agregar permisos con nombres

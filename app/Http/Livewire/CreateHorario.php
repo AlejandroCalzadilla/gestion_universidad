@@ -8,31 +8,50 @@ use App\Models\Materia;
 use App\Models\Carrera;
 use App\Models\Bitacora;
 use App\Models\Horario;
-//use App\Models\CarreraMateria;
+use App\Models\Grupo;
+use App\Models\CarreraMateria;
 class CreateHorario extends Component
 {
+
+    
     public $cupos;
     public $horario;
     public $materia_id;
     public $carrera_id;
     public $docente_id;
-    //public $materias;
+    public $grupo_id;
+    public $materias; // Agregar propiedad para al
 
-
+    public function updatedCarreraId($value)
+    {
+        $this->materias = Materia::where('carrera_id', $value)->get();
+    }
+    
 
     public function save()
     {
         $this->validate([
             'cupos' => 'required|integer|min:1',
-           
+            'grupo_id' => 'required|exists:grupos,id', 
             'horario' => [
                 'required',
                 'string',
                 'regex:/^[a-z]{2}-\d{2}:\d{2}-\d{2}:\d{2}-\d{3}-\d{2}(-[a-z]{2}-\d{2}:\d{2}-\d{2}:\d{2}-\d{3}-\d{2}){0,4}$/i',
+                function ($attribute, $value, $fail) {
+                    $exists = Horario::where('horario', $value)
+                        ->where('grupo_id', request('grupo_id'))
+                        ->exists();
+    
+                    if ($exists) {
+                        $fail("El horario y grupo seleccionados ya están en uso.");
+                    }
+                },
             ],
-
+            
             'materia_id' => 'required|exists:materias,id',
             'docente_id' => 'required|exists:docentes,id',
+            
+         
             'carrera_id' => 'required|exists:carreras,id',
         ]);
         
@@ -42,7 +61,9 @@ class CreateHorario extends Component
             'cupos' => $this->cupos,
             'horario' => $this->horario,
             'materia_id' => $this->materia_id,
+
             'docente_id' => $this->docente_id,
+            'grupo_id' => $this->grupo_id,
             'carrera_id' => $this->carrera_id,
         ]);
 
@@ -63,9 +84,11 @@ class CreateHorario extends Component
     {
         return view('livewire.create-horario',[
         'docentes' => Docente::all(),
-        'materias' => Materia::all(),
+        'grupos' => Grupo::all(),
         'carreras' => Carrera::all(), 
              
         ]);
     }
+    
+   
 }

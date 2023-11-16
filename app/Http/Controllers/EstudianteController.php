@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Bitacora;
+use App\Models\Carrera;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF;
+
 
 class EstudianteController extends Controller
 {
@@ -19,9 +22,11 @@ class EstudianteController extends Controller
         $this->middleware('can:Listar estudiantes')->only('index');
         $this->middleware('can:Ver estudiantes')->only('show');
         $this->middleware('can:Editar estudiantes')->only('edit', 'update');
-        $this->middleware('can:Crear  estudiantes')->only('create', 'store');
+        $this->middleware('can:Crear  estudiantes')->only('create', 'store'); 
         $this->middleware('can:Eliminar estudiantes')->only('destroy');
+        $this->middleware('can:ver perfile')->only('perfil');
     }
+
 
 
     public function index()
@@ -80,11 +85,16 @@ class EstudianteController extends Controller
      * Display the specified resource.
      */
    // public $estudiante;
-    public function show()
+    public function show(Estudiante $estudiante )
     {
-        $user = Auth::user();
-        $estudiante = $user->estudiante ?? null;
+       // $user = Auth::user();
+       // $estudiante = $user->estudiante ?? null;
+         //$estudiante =Estudiante::all();
+         //dd($estudiante);
+
         
+
+
         return view('estudiante.show', compact('estudiante'));
     }
      
@@ -108,7 +118,7 @@ class EstudianteController extends Controller
     public function edit(Estudiante $estudiante)
     {
 
-        $users = User::doesntHave('docente')->orWhere('id', $estudiante->user_id)->get(); 
+        $users = User::doesntHave('estudiante')->orWhere('id', $estudiante->user_id)->get(); 
         return view('estudiante.edit', compact('estudiante','users'));
     }
 

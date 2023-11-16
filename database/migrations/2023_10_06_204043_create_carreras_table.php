@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('facultad');
+            $table->string('tipo');
+            
             $table->timestamps();
+
         });
     }
 

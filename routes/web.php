@@ -26,7 +26,9 @@ use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\GrupoController;
 use App\Models\Carrera;
 use App\Models\Estudiante;
+use App\Models\Prerequisito;
 use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\PrerequisitoController;
 use App\Models\Docente;
 
 
@@ -60,6 +62,22 @@ Route::resource('roles', RoleController::class)->names('admin.roles');
 Route::resource('docentes',DocenteController::class);
 Route::resource('materias',MateriaController::class);
 Route::resource('carreras',CarrreraController::class);
+Route::get('carrera/{carrera}',[CarrreraController::class, 'generarPDF'])->name('carrera.generarpdf');
+
+
+//Route::resource('prerequisitos',PrerequisitoController::class);
+
+Route::get('prerequisitos', [PrerequisitoController::class, 'index'])->name('prerequisitos.index');
+Route::get('prerequisitos/{prerequisito}/create', [PrerequisitoController::class, 'create'])->name('prerequisitos.create');
+Route::post('prerequisitos', [PrerequisitoController::class, 'store'])->name('prerequisitos.store');
+Route::get('prerequisitos/{prerequisito}', [PrerequisitoController::class, 'show'])->name('prerequisitos.show');
+Route::get('prerequisitos/{prerequisito}/edit', [PrerequisitoController::class, 'edit'])->name('prerequisitos.edit');
+Route::put('prerequisitos/{prerequisito}', [PrerequisitoController::class, 'update'])->name('prerequisitos.update');
+Route::delete('prerequisitos/{prerequisito}', [PrerequisitoController::class, 'destroy'])->name('prerequisitos.destroy');
+
+
+
+
 
 
 Route::resource('estudiante',EstudianteController::class);

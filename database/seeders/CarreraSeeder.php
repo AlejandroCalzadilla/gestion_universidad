@@ -91,6 +91,10 @@ class CarreraSeeder extends Seeder
              Carrera::create([
                     'nombre' => $carrera,
                     'facultad' => $facultad,
+                    //crea un array de opciones luego 
+                    'tipo' => ['Semestral', 'Anual', 'Mensual'][array_rand(['Semestral', 'Anual', 'Mensual'])],
+
+                
                 ]);
             }
         }

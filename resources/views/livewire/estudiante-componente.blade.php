@@ -68,14 +68,19 @@
 
 
                                 {{-- para que el boton quede pegado a la derecha->width=10px --}}
-                               
+                                @can('Editar estudiantes')
+                                <td width="10px">
+                                    <a class="btn btn-info" href="{{ route('estudiante.show', $estudiantes) }}">
+                                        <i class="fas fa-user-edit"></i></a>
+                                </td>
+                            @endcan
                                  @can('Editar estudiantes')
                                     <td width="10px">
                                         <a class="btn btn-primary" href="{{ route('estudiante.edit', $estudiantes) }}">
                                             <i class="fas fa-user-edit"></i></a>
                                     </td>
                                 @endcan
-
+                                
                                 @can('Eliminar estudiantes')
                                     <td width="10px">
                                         <!-el form es necesario para cuando queremos eliminar por eso no pusimos

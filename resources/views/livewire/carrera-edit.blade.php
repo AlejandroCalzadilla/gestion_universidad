@@ -29,15 +29,28 @@
                         </span>
                     @enderror
                 </div>
+                <div class="form-group">
+                    {!! Form::label('tipo', 'Tipo: ') !!}
+                    {!! Form::select('tipo', ['Semestral' => 'Semestral', 'Anual' => 'Anual','Mensual' => 'Mensual'], null, [
+                        'class' => 'form-control' . ($errors->has('tipo') ? ' is-invalid' : ''),
+                        'placeholder' => 'Seleccione el tipo de carrera...',
+                    ]) !!}
+                    @error('tipo')
+                        <span class="invalid-feedback">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
             </div>
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
                 @if ($carrera->count())
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead class="table-info">
                             <tr>
         
-                                {{-- en descripcion ira vehiculo con marca --}}
+                               
                                 <th>nombre</th>
                                 <th>semestre</th>
                                 <th>creditos</th>
@@ -78,7 +91,7 @@
                 </div>
         
         
-            </div> 
+            </div>  --}}
              
             
            
@@ -91,8 +104,8 @@
         {!! Form::close() !!}
     </div>
 
-    <div class="card-body">
-
+     <div class="card-body">
+       {{--
         <div class="row">
             <div class="col-md-6">
         <h2>Agregar Materias a Carrera: {{ $carrera->nombre }}</h2>
@@ -118,7 +131,7 @@
         </form>
     </div>
     </div>
-    
+     --}}
 
 
     </div>

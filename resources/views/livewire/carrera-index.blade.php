@@ -71,6 +71,8 @@
                                     </td>
                                 @endcan
 
+                                
+
 
                                 @can('Eliminar carreras')
                                     <td width="10px">

@@ -16,19 +16,31 @@ class MateriaSeeder extends Seeder
         Materia::create([
             'sigla' => 'SCI402',
             'nombre' => 'Calculo1',
+            'semestre' => 1,
+            'credito'=> 5,
+            'carrera_id' => 24,
         ]);
 
         Materia::create([
             'sigla' => 'SCI403',
             'nombre' => 'calculo2',
+            'semestre' => 2,
+            'credito'=> 5,
+            'carrera_id' => 24,
         ]);
         Materia::create([
             'sigla' => 'SCI405',
             'nombre' => 'introduccion a la informatica',
+            'semestre' => 1,
+            'credito'=> 5,
+            'carrera_id' => 24,
         ]);
         Materia::create([
             'sigla' => 'SCI406',
             'nombre' => 'programacion1',
+            'semestre' => 2,
+            'credito'=> 5,
+            'carrera_id' => 24,
         ]);
     }
    

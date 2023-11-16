@@ -1,16 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Materias')
 
 @section('content_header')
-    
+    <h1>Lista de Materias</h1>
 @stop
 
-@section('content')
-
- @livewire('prerequisitos-materia', ['materia' => $materia,'pres' => $pres])
-
-
+@section('content')    
+    
 @stop
 
 @section('css')
